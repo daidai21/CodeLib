@@ -1,0 +1,14 @@
+# Python-Project-Guide changelog
+
+
+## 2019-4-29  0.1.0
+
+
+* Added directory structure and docs
+
+
+## 2019-4-28  0.1.0
+
+
+* First public version.
+
