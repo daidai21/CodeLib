@@ -9,4 +9,5 @@ temp*.cc
 *.pyc
 __pycache__/
 push.sh
+third_party/
 # TODO
