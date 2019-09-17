@@ -1,0 +1,13 @@
+.vscode
+temp.*
+temp*.py
+temp*.h
+temp*.c
+temp*.cc
+*.temp
+*.out
+*.pyc
+__pycache__/
+push.sh
+third_party/
+# TODO
