@@ -6,86 +6,6 @@
 ============================================================================= */
 
 
-#include <stdio.h>
-
-
-
-/*函数fork*/
-#include <unistd.h>
-
-pid_t fork(void);
-
-/* 函数vfork*/
-
-vfork();
-
-
-/* 函数wait和waitpid */
-
-#include <sys/wait.h>
-
-pid_t wait(int* statloc);
-pid_t waitpid(pid_t pid, int* statloc, int options);
-
-/* */
-
-#include <sys/wait.h>
-
-int waitid(idtype_t idtype, id_t id, siginfo_t* infop, int options);
-
-/* */
-
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <time.h>
-#include <sys/resource.h>
-
-pid_t wait3(int *status, int options,
-            struct rusage *rusage);
- 
-pid_t wait4(pid_t pid, int *status, int options,
-            struct rusage *rusage);
-
-
-/*  */
-
-#include <stdlib.h>
-
-int system(const char* cmdstring);
-
-
-/*  */
-
-#include <sys/acct.h>
-
-
-
-/*　用户标示 */
-
-#include <unistd.h>
-
-char *getlogin(void);
-
-
-/*　进程调度 */
-#include <unistd.h>
-int nice(int incr);
-
-#include <sys/resource.h>
-
-int getpriority(int which, id_t who);
-
-#include <sys/resource.h>
-
-int setpriority(int which, id_t who, int value);
-
-
-/*　进程时间 */
-
-#include <sys/times.h>
-
-clock_t times(struct tms* buf);
-
 // 创建一个新会话
 #include<unistd.h>
 pid_t setsid(void);
@@ -104,3 +24,15 @@ int tcsetpgrp(int fd,pid_t pgrpid);
 #include<termios.h>
 pid_t tcgetsid(int fd);
 
+
+exit/_Exit/_exit函数：正常终止一个程序
+
+#include<stdlib.h>
+void exit(int status);
+void _Exit(int status);
+#include<unistd.h>
+void _exit(int status);
+// atexit函数：登记由exit函数调用的清理函数
+
+#include<stdlib.h>
+int atexit(void (*func) (void));
