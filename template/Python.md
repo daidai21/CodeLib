@@ -21,11 +21,17 @@ You can read the following two documents:
 There are some tools can help you.
 
 - Flake8
+    - Pyflakes
+    - mccabe
+    - pycodestyle (pep8)
 - Yapf
-- Pylint
-- Autopep8
-- etc.
+- Pylint (not good)
 
+### Coverage
+
+check test coverage rate
+
+TODO
 
 ### Catelog
 
