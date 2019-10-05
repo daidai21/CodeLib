@@ -6,46 +6,41 @@
 ============================================================================= */
 
 
-// 进程组
-
-/////////////////////////////////////////////////////////////
-// getpgrp/getpgid函数：获取进程所属的进程组：
-
-#include<unistd.h>
-pid_t getpgrp(void);
-pid_t getpgid(pid_t pid);
-// setpgid函数：加入一个现有的进程组或者创建一个新进程组
-
-#include<unistd.h>
-int setpgid(pid_t pid,pid_t pgid);
-
-// 会话
-/////////////////////////////////////////////////////////////
-// setsid函数：创建一个新会话
-
-#include<unistd.h>
-pid_t setsid(void);
+// TODO: not understand!!!!
 
 
-
-// getsid函数：返回进程所在的会话ID（会话ID等于会话首进程的进程组ID，会话首进程总是进程组的组长进程，因此它也等于会话首进程的进程ID）
-
-#include<unistd.h>
-pid_t getsid(pid_t pid);
-
-
-// 作业控制
-/////////////////////////////////////////////////////////////
-tcgetpgrp/tcsetpgrp函数：获取/设置当前进程所在会话的前台进程组ID
-
-#include<unistd.h>
-pid_t tcgetpgrp(int fd);
-int tcsetpgrp(int fd,pid_t pgrpid);
+#include <stdio.h>
+#include <unistd.h>
+#include <termios.h>
+#include <signal.h>
 
 
-tcgetsid函数：获取会话首进程的进程组ID（也就是会话ID）
+static void judge() {
+  pid_t pid = tcgetpgrp(STDIN_FILENO);
+  if (pid < 0) {
+    printf("tcgetpgrp error\n");
+    return ;
+  } else if (pid == getpgrp())
+    printf("foreground\n");
+  else
+    printf("background\n");
+}
 
-#include<termios.hh>
-pid_t tcgetsid(int fd);
+int main(){
+  pid_t spid;
+  printf("tcgetsid=%d, pgrp=%d, sid=%d\n", tcgetsid(STDIN_FILENO), getpgrp(), getsid(getpid()));
+  spid = tcgetsid(STDIN_FILENO);
+  signal(SIGTTOU, SIG_IGN);
+  judge();
+  int result;
+  result = tcsetpgrp(STDIN_FILENO, getpgrp());
+  if(result < 0){
+    perror("tcsetpgrp error\n");
+    return -1;
+  }
+  judge();
+  result = tcsetpgrp(STDIN_FILENO, spid);
+  judge();
 
-
+  return 0;
+}
