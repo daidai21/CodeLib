@@ -7,7 +7,7 @@
 
 
 /*
-  TODO: not test
+  TODO: not test, dynamic bitset, auto ptr
     how to class inherit delay?
 */
 
@@ -44,7 +44,7 @@ class BloomFilter {
 
   ~BloomFilter() {};
 
-  void add(string key) {
+  void insert(string key) {
     ++insert_data_num;
     for (int i = 0; i < func_array_ptr.size(); ++i) {
         int index = (*func_array_ptr[i])(key);
@@ -52,8 +52,7 @@ class BloomFilter {
     }
   }
 
-  // judge already add key
-  bool had(string key) {
+  bool contains(string key) {
     for (int i = 0; i < func_array_ptr.size(); ++i) {
         int index = (*func_array_ptr[i])(key);
         if (!bit_array[index])
@@ -62,7 +61,11 @@ class BloomFilter {
     return true;
   }
 
-  float false_positive_rate() {
+  inline void clear() {
+    bit_array.reset();
+  }
+
+  inline float false_positive_rate() {
     return std::pow((1 - std::exp(- func_array_ptr.size() * insert_data_num / len_bitarray)), func_array_ptr.size());
   }
 
@@ -76,4 +79,3 @@ class BloomFilter {
 
 
 #endif // CC_BLOOM_FILTER_H
-

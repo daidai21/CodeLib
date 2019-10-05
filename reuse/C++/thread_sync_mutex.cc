@@ -1,26 +1,13 @@
 /* =============================================================================
-> File Name: thread.cpp
+> File Name: thread_sync_mutex.cc
 > Author: DaiDai
 > Mail: daidai4269@aliyun.com
-> Created Time: Thu 12 Sep 2019 09:20:26 PM CST
+> Created Time: Sun 15 Sep 2019 08:27:38 PM CST
 ============================================================================= */
 
 
 #include <iostream>
-#include <thread>
-
 
 using namespace std;
 
 
-void hello() {
-  cout << "hello" << endl;
-}
-
-int main() {
-  thread t(hello);
-  t.join();
-  cout << "over" << endl;
-
-  return 0;
-}
