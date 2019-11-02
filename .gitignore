@@ -4,6 +4,8 @@ temp*.py
 temp*.h
 temp*.c
 temp*.cc
+temp*.md
+temp*.sh
 *.temp
 *.out
 *.pyc

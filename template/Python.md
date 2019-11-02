@@ -81,6 +81,18 @@ TODO
   - `tqdm`
   - `dis`
   - `cffi`
+- debug
+  - `trace`
+  - `traceback`
+  - `tracemalloc`
+  - pdb, `python -m pdb err.py`
+  ```python
+  import pdb
+  pdb.set_trace()
+  ```
+  - `pysnooper`
+  - `pprint`
+
 
 ### Special Annotation
 
