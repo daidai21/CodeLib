@@ -8,6 +8,9 @@
 # =============================================================================
 
 
+:<<COMMENT
+git push script
+COMMENT
 set -x
 set -e
 
@@ -16,3 +19,8 @@ git add .
 git commit -m "$(git status -s)"
 git push origin master
 
+
+:<<COMMENT
+git push script
+COMMENT
+git diff HEAD --no-ext-diff --unified=0 --exit-code -a --no-prefix | egrep "^\+" | wc.exe -m
