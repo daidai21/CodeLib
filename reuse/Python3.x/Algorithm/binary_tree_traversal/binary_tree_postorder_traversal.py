@@ -3,11 +3,19 @@
 
 
 # =============================================================================
+<<<<<<< HEAD
 # File Name: binary_tree_postorder_traversal.py
 # Author: DaiDai
 # Mail: daidai4269@aliyun.com
 # Created Time: Fri Dec 13 14:21:17 2019
 # =============================================================================
+=======
+# File Name: .py
+# Author: DaiDai
+# Mail: daidai4269@aliyun.com
+# Created Time: Fri Dec 13 14:21:17 2019
+# ========================binary_tree_postorder_traversal=====================================================
+>>>>>>> e500d3b7146183b5bdc297595fbd123d8a71a5e4
 
 
 def postorder_recursion(node):
