@@ -16,6 +16,7 @@ from count_sort import count_sort
 from insert_sort import insert_sort
 from merge_sort import merge_sort
 from quick_sort import quick_sort
+from heap_sort import heap_sort
 
 import random
 import unittest
@@ -33,7 +34,7 @@ class TestMain(unittest.TestCase):
 
     def test_all_sort(self):
         for func in [bubble_sort, bucket_sort, count_sort, insert_sort, 
-        merge_sort, quick_sort]:
+        merge_sort, quick_sort, heap_sort]:
             if self._sort_template(func):
                 print("OK ", str(func))
             else:

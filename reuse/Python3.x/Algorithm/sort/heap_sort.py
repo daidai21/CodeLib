@@ -10,7 +10,7 @@
 # =============================================================================
 
 
-def head_sort(lst):
+def heap_sort(lst):
     def shit_down(start, end):
         root = start
         while True:
@@ -37,6 +37,6 @@ def head_sort(lst):
 
 if __name__ == "__main__":
     l = [9, 2, 1, 7, 6, 8, 5, 3, 4]
-    ls = head_sort(l)
+    ls = heap_sort(l)
     print(l)
     print(ls)
