@@ -1,8 +1,8 @@
 /* =============================================================================
-> File Name: print_special_symbols.cpp
+> File Name: cout_special_string.cpp
 > Author: DaiDai
 > Mail: daidai4269@aliyun.com
-> Created Time: Sun 08 Dec 2019 04:25:10 PM CST
+> Created Time: Mon 23 Dec 2019 03:29:57 AM CST
 ============================================================================= */
 
 
@@ -11,10 +11,13 @@
 using namespace std;
 
 int main() {
-  cout << "\\x00" << " --> " << "\x00" << " --sizeof--> " << sizeof("\x00") << endl;
+  cout << "\\x00" << endl;
+  cout << "\\x0b" << endl;
 
-  cout << sizeof(void* ) << endl;
+  cout << "\x00" << endl;
+  cout << "\x0b" << endl;
 
   return 0;
 }
+
 
