@@ -1,4 +1,14 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
+
+# =============================================================================
+# File Name: GUI_adjust_img_expansion.py
+# Author: DaiDai
+# Mail: daidai4269@aliyun.com
+# Created Time: Mon 28 Oct 2019 10:39:53 PM CST
+# =============================================================================
+
 
 import cv2
 
