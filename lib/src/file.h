@@ -13,7 +13,7 @@
 
 namespace file {
 
-
+/*
 exists();
 isdir();
 modify_time();
@@ -22,24 +22,34 @@ size();
 
 mkdir();
 remove();
-
+*/
 
 class File {
  public:
+  File() = default;
+  ~File() = default; // ensure file status is closed
 
-  File();
+  void open(std::string filename, std::string mode) {
+    fp_ = fopen(filename.data(), mode.data());
+  }
 
-  open(std::string, std::string);
-  write(std::string);
-  writeline();
-  close();
+  bool write(std::string text) {
+    fputs(text.data(), fp_);
+  }
 
-  flush();
+  bool writeline();
 
+  bool close() {
+    fclose(fp_);
+  }
 
+  bool flush();
 
+ private:
+  FILE* fp_;
 
 };
 
 
-}
+} // namespace file
+

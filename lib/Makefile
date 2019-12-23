@@ -13,4 +13,9 @@ all_example:
 
 clean:
 	rm *.o
+	rm *.out
+
+# every test file
+test_os:
+	g++ test/file_test.cc
 
