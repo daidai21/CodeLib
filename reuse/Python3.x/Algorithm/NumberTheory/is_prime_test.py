@@ -15,6 +15,7 @@ from is_prime import is_prime2
 from is_prime import is_prime3
 
 import unittest
+import sys
 import time
 
 
@@ -28,9 +29,8 @@ class TestMain(unittest.TestCase):
                 print("OK")
             else:
                 err_msg = "Error, last input num is: {}, result: {}, {}, {}"
-                assert False, err_msg.format(num, is_prime1(num), 
-                                                  is_prime2(num), 
-                                                  is_prime3(num))
+                print(err_msg.format(num, is_prime1(num), is_prime2(num), is_prime3(num)))
+                sys.exit()
 
     def test_performance(self):
         T1 = time.time()
