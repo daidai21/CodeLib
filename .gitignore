@@ -15,4 +15,4 @@ third_party/
 TODO
 tmp*.*
 *compile.sh
-
+*.exe
