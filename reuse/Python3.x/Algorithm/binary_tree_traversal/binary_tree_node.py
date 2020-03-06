@@ -14,5 +14,8 @@ class BinaryTreeNode(object):
     def __init__(self, val):
         self.left = None
         self.right = None
-        self.val = val
+        self.val = val  # cmp key
+
+        # You can use inherited extension functionality
+        # self.data = None
 
