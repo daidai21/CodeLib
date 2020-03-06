@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Thread Synchronization
 
 
@@ -15,3 +16,16 @@
 | sleep(线程休眠) + `while (1);` |  |  |  |  |  |
 | `seched_yield();`(调整线程运行优先队列) + `while (1);` |  |  |  |  |  |
 | Atomic variable + `while(1);` |  |  |  |  |  |
+=======
+### C++ STL with All version
+
+
+TODO: future
+
+
+TODO: (C++11/C++14 exclude)
+    semaphore
+    latch
+    barrier
+
+>>>>>>> develop.cpp.thread_sync
