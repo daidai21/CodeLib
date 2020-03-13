@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# =============================================================================
-# File Name: judge_operator_system_version.sh
-# Author: DaiDai
-# Mail: daidai4269@aliyun.com
-# Created Time: Wed 18 Sep 2019 06:45:55 PM CST
-# =============================================================================
-
 
 # TODO: have not in mac, centos and FreeBSD test
 

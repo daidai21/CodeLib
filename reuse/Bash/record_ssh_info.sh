@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# =============================================================================
-# File Name: record_ssh_info.sh
-# Author: DaiDai
-# Mail: daidai4269@aliyun.com
-# Created Time: Wed 11 Sep 2019 05:02:36 PM CST
-# =============================================================================
-
 
 :<<'COMMENT'
     the var `ssh_list` record ssh infor (include username and ip)

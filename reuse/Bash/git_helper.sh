@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# =============================================================================
-# File Name: git_helper.sh
-# Author: DaiDai
-# Mail: daidai4269@aliyun.com
-# Created Time: Thu 05 Dec 2019 10:51:03 PM CST
-# =============================================================================
-
 
 :<<COMMENT
 git push script

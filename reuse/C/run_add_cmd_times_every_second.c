@@ -1,12 +1,10 @@
-/* =============================================================================
-> File Name: run_add_cmd_times_every_second.c
-> Author: DaiDai
-> Mail: daidai4269@aliyun.com
-> Created Time: Mon 09 Dec 2019 04:47:42 PM CST
-============================================================================= */
+/* gcc run_add_cmd_times_every_second.c -d WIN32 */
 
-
-#include <pthread.h>
+#ifdef UNIX
+#   include <pthread.h>
+#elif WIN32
+#   include <windows.h>
+#endif
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>

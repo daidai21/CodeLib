@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# =============================================================================
-# File Name: docker_helper.sh
-# Author: DaiDai
-# Mail: daidai4269@aliyun.com
-# Created Time: Fri 22 Nov 2019 08:44:51 PM CST
-# =============================================================================
-
 
 set -x
 # set -e

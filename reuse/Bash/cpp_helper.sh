@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# =============================================================================
-# File Name: cpp_helper.sh
-# Author: DaiDai
-# Mail: daidai4269@aliyun.com
-# Created Time: Sat 23 Nov 2019 10:30:25 PM CST
-# =============================================================================
-
 
 # set -x
 set -e

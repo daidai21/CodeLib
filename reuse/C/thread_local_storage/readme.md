@@ -1,0 +1,2 @@
+TLS
+__thread
