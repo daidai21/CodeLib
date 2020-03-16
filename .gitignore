@@ -12,7 +12,7 @@ temp*.sh
 __pycache__/
 push.sh
 third_party/
-TODO
+# TODO
 tmp*.*
 *compile.sh
 *.exe
