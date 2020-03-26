@@ -30,3 +30,10 @@ extern void bind_core(int64_t core_id);
 
 double random_decimal(const double lower_bound, const double upper_bound) {}
 float random_decimal(const float lower_bound, const float upper_bound) {}
+
+/* convert int to char* */
+char* itoa(int val, int base) {
+  char* res;
+
+  return res;
+}
