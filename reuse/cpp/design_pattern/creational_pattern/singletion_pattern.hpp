@@ -1,7 +1,5 @@
 // support thread safe
-// not support thread safe
-
-
+// C++11
 class Singletion {
  private:
   Singletion() {}
