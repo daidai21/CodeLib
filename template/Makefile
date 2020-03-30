@@ -1,6 +1,7 @@
 CC=gcc
 CXX=g++
 CFLAGS=-std=c11 -g -O3 -Wall
+LDFLAGS=-pthread
 CXXFLAGS=-std=c++11 -g -O3 -Wall
 
 

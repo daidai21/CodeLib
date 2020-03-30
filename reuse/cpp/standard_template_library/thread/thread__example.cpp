@@ -1,10 +1,3 @@
-/* =============================================================================
-> File Name: thread.cpp
-> Author: DaiDai
-> Mail: daidai4269@aliyun.com
-> Created Time: Wed 09 Oct 2019 05:48:06 PM CST
-============================================================================= */
-
 
 #include <iostream>
 #include <thread>
