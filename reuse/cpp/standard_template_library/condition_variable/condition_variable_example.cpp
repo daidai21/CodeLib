@@ -1,9 +1,4 @@
-/* =============================================================================
-> File Name: condition_variable.cpp
-> Author: DaiDai
-> Mail: daidai4269@aliyun.com
-> Created Time: Wed 09 Oct 2019 06:40:55 PM CST
-============================================================================= */
+// std::condition_variable
 
 
 #include <iostream>
@@ -69,3 +64,4 @@ int main() {
     t5.join();
     t6.join();
 }
+
