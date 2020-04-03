@@ -1,8 +1,9 @@
+#ifndef BASE62_HPP__
+#define BASE62_HPP__
+
+
 #include <string>
 #include <algorithm>
-
-#include <cassert>
-#include <iostream>
 
 
 const std::string BASE_62_CHAR = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -28,10 +29,5 @@ unsigned long long int to_base10(std::string str) {
 }
 
 
-int main() {
-  std::cout << to_base62(12233) << std::endl;
-  assert("3bj" == to_base62(12233));
-  assert(12233 == to_base10("3bj"));
+#endif // BASE62_HPP__
 
-  return 0;
-}
