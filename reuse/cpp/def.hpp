@@ -1,3 +1,5 @@
+// Version C++11
+
 
 typedef unsigned long long int ulli_t;
 typedef unsigned long int      uli_t;
@@ -8,4 +10,8 @@ typedef long int               li_t;
 // TODO print binry number
 std::cout <<std::bin << std::endl;
 
-typedef byte char;
+typedef unsigned char byte;
+
+
+#define CAS atomic_compare_exchange_weak
+
