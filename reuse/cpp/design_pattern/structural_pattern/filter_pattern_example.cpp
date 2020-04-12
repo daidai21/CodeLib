@@ -1,9 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithms>
+#include <algorithm>
 
-// TODO: BUG
 
 class Person {
  public:
@@ -37,13 +36,13 @@ class Criteria {
 class CriteriaMale : public Criteria {
  public:
   virtual std::vector<Person*> meet_criteria(std::vector<Person*> persons) {
+    std::vector<Person*> male_persons;
     for (Person* person : persons) {
-      // if (person->gender() == std::to_string("MALE")) {
-      if (person->gender() == std::string("MALE")) {
-      // if (person->gender().compare("MALE")) {
-        this->persons.push_back(person);
+      if (person->get_gender() == std::string("Male")) {
+        male_persons.push_back(person);
       }
     }
+    return male_persons;
   }
 };
 
@@ -51,22 +50,26 @@ class CriteriaMale : public Criteria {
 class CriteriaFemale : public Criteria {
  public:
   virtual std::vector<Person*> meet_criteria(std::vector<Person*> persons) {
+    std::vector<Person*> female_persons;
     for (Person* person : persons) {
-      if (person->gender() == "FEMALE") {
-        this->persons.push_back(person);
+      if (person->get_gender() == "Female") {
+        female_persons.push_back(person);
       }
     }
+    return female_persons;
   }
 };
 
 class CriteriaSingle : public Criteria {
  public:
   virtual std::vector<Person*> meet_criteria(std::vector<Person*> persons) {
+    std::vector<Person*> single_persons;
     for (Person* person : persons) {
-      if (person->gender() == "SINGLE") {
-        this->persons.push_back(person);
+      if (person->get_marital_status() == "Single") {
+        single_persons.push_back(person);
       }
     }
+    return single_persons;
   }
 };
 
@@ -77,7 +80,7 @@ class AndCriteria : public Criteria {
 
   virtual std::vector<Person*> meet_criteria(std::vector<Person*> persons) {
     std::vector<Person*> first_criteria_persons = criteria->meet_criteria(
-        person);
+        persons);
     return this->other_criteria->meet_criteria(first_criteria_persons);
   }
 
@@ -88,7 +91,7 @@ class AndCriteria : public Criteria {
 
 class OrCriteria : public Criteria {
  public:
-  virtual OrCriteria(Criteria* criteria, Criteria* other_criteria):
+  OrCriteria(Criteria* criteria, Criteria* other_criteria):
       criteria(criteria), other_criteria(other_criteria) { }
 
   virtual std::vector<Person*> meet_criteria(std::vector<Person*> persons) {
@@ -141,17 +144,10 @@ int main() {
   print_persons(male->meet_criteria(persons));
   std::cout << "\n" << "Females: " << std::endl;
   print_persons(female->meet_criteria(persons));
-  std::cout << "\n" << "Single Males: " << std::endl;
+  std::cout << "\n" << "Single And Males: " << std::endl;
   print_persons(single_and_male->meet_criteria(persons));
   std::cout << "\n" << "Single Or Females: " << std::endl;
   print_persons(single_or_female->meet_criteria(persons));
-
-
-  delete male;
-  delete female;
-  delete single;
-  delete single_and_male;
-  delete single_or_female;
 
   return 0;
 }
