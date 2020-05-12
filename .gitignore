@@ -16,3 +16,4 @@ third_party/
 tmp*.*
 *compile.sh
 *.exe
+*.class
