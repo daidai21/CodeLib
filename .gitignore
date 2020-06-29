@@ -17,3 +17,5 @@ tmp*.*
 *compile.sh
 *.exe
 *.class
+.DS_Store
+

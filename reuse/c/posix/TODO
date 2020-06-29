@@ -1,2 +1,14 @@
 http://harlon.org/categories/Notes/page/2/
 
+
+posix main content
+
+https://www.rt-thread.org/document/site/programming-manual/posix/posix/
+
+- thread: create, join, detaching
+- mutex
+- condition variable
+- read/write lock, barrier
+- (semaphore)
+- (message queue)
+
