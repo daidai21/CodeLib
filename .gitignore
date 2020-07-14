@@ -19,3 +19,9 @@ tmp*.*
 *.class
 .DS_Store
 
+# For java
+.idea
+*.jar
+target/
+lib/
+temp.txt
