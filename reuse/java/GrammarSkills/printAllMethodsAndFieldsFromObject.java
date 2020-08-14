@@ -24,6 +24,26 @@ public class printAllMethodsAndFieldsFromObject {
             e.printStackTrace();
         }
 
+        System.out.println("\n\n");
+        System.out.println(new printAllMethodsAndFieldsFromObject());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+
+        for (Field field : getClass().getDeclaredFields()) {
+            result.append(field);
+            result.append("\n");
+            // System.out.println(field);
+        }
+        for (Method method : getClass().getDeclaredMethods()) {
+            result.append(method);
+            result.append("\n");
+            // System.out.println(method);
+        }
+
+        return result.toString();
     }
 
     public void foo() {}
@@ -34,4 +54,3 @@ public class printAllMethodsAndFieldsFromObject {
     private int var1 = 112414;
     private boolean var2 = false;
 }
-
