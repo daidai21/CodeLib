@@ -11,8 +11,13 @@ typedef unsigned int           ui_t;
 typedef long long int          lli_t;
 typedef long int               li_t;
 
-// TODO print binry number
-std::cout <<std::bin << std::endl;
+
+#define ERR_EXIT(m) \
+  do{ \
+    perror(m); \
+    exit(EXIT_FAILURE); \
+  } while(0)
+
 
 typedef unsigned char byte;
 
@@ -34,4 +39,3 @@ inline std::string to_lower(std::string str) {
 inline bool equals_ignore_case(std::string str1, std::string str2) {
   return to_upper(str1) == to_upper(str2);
 }
-
