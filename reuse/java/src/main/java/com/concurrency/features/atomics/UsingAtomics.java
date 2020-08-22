@@ -1,4 +1,4 @@
-// package com.atomics;
+package com.concurrency.features.atomics;
 
 
 /* ****************************************************************************

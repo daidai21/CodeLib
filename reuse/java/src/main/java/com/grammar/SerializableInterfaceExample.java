@@ -1,3 +1,5 @@
+package com.grammar;
+
 /**
  * Serialization interface
  */
