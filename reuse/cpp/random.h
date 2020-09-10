@@ -18,6 +18,9 @@
 double random(double from, double to);
 
 
+// TODO
+// https://github.com/chxuan/cpp-utils/tree/master/random_generator
+
 class Random {
  public:
   //
