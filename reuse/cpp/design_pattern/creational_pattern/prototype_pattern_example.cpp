@@ -2,6 +2,8 @@
 #include <string>
 #include <map>
 
+// TODO: BUG
+// g++ open optimize error
 
 // cloneable interface abstract class
 // prototype
