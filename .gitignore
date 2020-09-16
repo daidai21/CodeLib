@@ -27,3 +27,4 @@ lib/
 temp.txt
 *Temp.java
 *temp.java
+.classpath
