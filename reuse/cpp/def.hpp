@@ -39,3 +39,6 @@ inline std::string to_lower(std::string str) {
 inline bool equals_ignore_case(std::string str1, std::string str2) {
   return to_upper(str1) == to_upper(str2);
 }
+
+
+#define GET_CURRENT_MICRO	std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now().time_since_epoch()).count()
