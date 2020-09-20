@@ -1,6 +1,3 @@
-package com.grammar;
-
-
 public class ParameterBindingExample {
     public static void main(String[] args) {
         // Delivery of basic type parameters
