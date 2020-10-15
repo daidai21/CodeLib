@@ -42,3 +42,6 @@ inline bool equals_ignore_case(std::string str1, std::string str2) {
 
 
 #define GET_CURRENT_MICRO	std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now().time_since_epoch()).count()
+
+
+#define PI 3.14159265

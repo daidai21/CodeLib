@@ -1,6 +1,4 @@
-重点
-
-JUC
+# JUC (java.util.concurrent)
 
 
 **线程安全集合**
