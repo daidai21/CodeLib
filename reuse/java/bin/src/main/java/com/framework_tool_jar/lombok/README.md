@@ -21,19 +21,55 @@ https://projectlombok.org/features/Data
 
 ```
 
-To
+CompileTo
 
 
 ```java
 
 ```
 
+#### @EqualsAndHashCode
+
+从对象的字段生成hashCode和equals实现。
+
+#### @RequiredArgsConstructor
+
+会生成一个包含常量，和标识了NotNull的变量 的构造方法。生成的构造方法是private，如何想要对外提供使用可以使用staticName选项生成一个static方法。
+
+```java
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor(staticName = "of")
+public class ConstructorExample<T> {
+    private int x, y;
+    
+    @NonNull
+    private T description;
+}
+```
+
+CompileTo
+
+```java
+import lombok.RequiredArgsConstructor;
+
+public class ConstructorExample<T> {
+    private int x, y;
+    
+    @NonNull
+    private T description;
+  
+    public static <T> ConstructorExample<T> of(T description) {
+        return new ConstructorExample<T>(description);
+    }
+}
+```
 
 #### @Accessors
 
 https://projectlombok.org/features/experimental/Accessors
 
-
+类似 @Getter @Setter 的新的实验性的api
 
 #### @Slf4j
 
