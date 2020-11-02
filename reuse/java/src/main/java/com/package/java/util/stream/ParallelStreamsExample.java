@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 
-public class UsingParallelStreams {
+public class ParallelStreamsExample {
     public static void main(String[] args) {
         // Creating parallel streams from existing collections
         new ArrayList<>().parallelStream();
@@ -15,7 +15,7 @@ public class UsingParallelStreams {
         IntStream.rangeClosed(0, 30000) // source
                  .parallel() // intermediate operations
                  .mapToObj(BigInteger::valueOf)
-                 .map(UsingParallelStreams::isPrime)
+                 .map(ParallelStreamsExample::isPrime)
                  .collect(Collectors.toList()); // terminal operation
 
         System.out.println("\n");
@@ -43,7 +43,7 @@ public class UsingParallelStreams {
         long start1 = System.currentTimeMillis();
         IntStream.rangeClosed(0, 50000)
                  .mapToObj(BigInteger::valueOf)
-                 .map(UsingParallelStreams::isPrime)
+                 .map(ParallelStreamsExample::isPrime)
                  .collect(Collectors.toList());
         long end1 = System.currentTimeMillis();
         long time1 = (end1 - start1) / 1000;
@@ -54,7 +54,7 @@ public class UsingParallelStreams {
         IntStream.rangeClosed(0, 50000)
                  .parallel()
                  .mapToObj(BigInteger::valueOf)
-                 .map(UsingParallelStreams::isPrime)
+                 .map(ParallelStreamsExample::isPrime)
                  .collect(Collectors.toList());
         long end2 = System.currentTimeMillis();
         long time2 = (end2 - start2) / 1000;

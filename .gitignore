@@ -28,3 +28,5 @@ temp.txt
 *Temp.java
 *temp.java
 .classpath
+reuse/java/bin/*
+.settings/
