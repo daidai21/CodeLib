@@ -1,3 +1,2 @@
-# DAIDAI C++ lib like Py API
-
-
+# dd
+C++ basic library

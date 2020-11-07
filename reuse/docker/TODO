@@ -1,0 +1,11 @@
+https://juejin.im/post/6844904052006846478
+隔离
+    进程隔离
+    文件隔离
+    资源限制
+
+
+沙箱机制
+linux namespace
+
+Linux 内核特性 Namespace 和Cgroup 技术

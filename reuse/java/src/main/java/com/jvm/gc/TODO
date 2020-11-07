@@ -1,0 +1,17 @@
+垃圾回收器：
+    serial
+    parnew
+    parallel scavenge
+    serial old
+    cms
+    G1
+    ZGC
+算法：
+    标记清除法
+    标记复制法
+    标记-整理
+    分代收集算法
+
+
+
+https://www.infoq.cn/article/3WyReTKqrHIvtw4frmr3

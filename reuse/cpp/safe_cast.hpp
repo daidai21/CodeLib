@@ -5,26 +5,22 @@
  * Created Time: 五  9/11 02:39:02 2020
  *************************************************************************** */
 
-
 // TODO
 // https://github.com/chxuan/cpp-utils/blob/master/lexical_cast/lexical_cast.h
 // not test
 // add unsigned type
 // type convert have missing
 
-
 #ifndef __SAFE_CAST_HPP__
 #define __SAFE_CAST_HPP__
 
-
 #include <string>
 
-
-template<typename FromType, typename ToType>
+template <typename FromType, typename ToType>
 struct converter {};
 
 // convert to int
-template<typename FromType>
+template <typename FromType>
 struct converter<int, FromType> {
  public:
   static int convert(const std::string& from) {
@@ -37,29 +33,59 @@ struct converter<int, FromType> {
 };
 
 // convert to long int
-template<typename FromType>
-struct converter<long int, FromType> {};
-// TODO
+template <typename FromType>
+struct converter<long int, FromType> {
+ public:
+  static long int convert(const std::string& from) {
+    return std::atol(from.c_str());
+  }
+
+  static long int convert(const char* from) {
+    return std::atol(from);
+  }
+};
 
 // convert to long long int
-template<typename FromType>
-struct converter<long long int, FromType> {};
-// TODO
+template <typename FromType>
+struct converter<long long int, FromType> {
+ public:
+  static long long int convert(const std::string& from) {
+    return std::atoll(from.c_str());
+  }
+
+  static long long int convert(const char* from) {
+    return std::atoll(from);
+  }
+};
 
 // convert to double
-template<typename FromType>
+template <typename FromType>
 struct converter<double, FromType> {
  public:
-  // TODO
+  static double convert(const std::string& from) {
+    return std::atof(from.c_str());
+  }
+
+  static double convert(const char* from) {
+    return std::atof(from);
+  }
 };
 
 // convert to float
-template<typename FromType>
-struct converter<float, FromType> {};
-// TODO
+template <typename FromType>
+struct converter<float, FromType> {
+ public:
+  static double convert(const std::string& from) {
+    return static_cast<float>(std::atof(from.c_str()));
+  }
+
+  static double convert(const char* from) {
+    return static_cast<float>(std::atof(from));
+  }
+};
 
 // convert to bool
-template<typename FromType>
+template <typename FromType>
 struct converter<bool, FromType> {
  public:
   static bool convert(int from) {
@@ -67,13 +93,12 @@ struct converter<bool, FromType> {
   }
 
   static bool convert(const std::string& from) {
-    return std::atoi(from.c_str() > 0 ? true : false;
+    return std::atoi(from.c_str()) > 0 ? true : false;
   }
-
 };
 
 // convert to std::string
-template<typename FromType>
+template <typename FromType>
 struct converter<std::string, FromType> {
  public:
   static std::string convert(int from) {
@@ -88,7 +113,7 @@ struct converter<std::string, FromType> {
     return std::to_string(from);
   }
 
-  static std::string convert(const std::stirng& from) {
+  static std::string convert(const std::string& from) {
     return from;
   }
 
@@ -99,14 +124,12 @@ struct converter<std::string, FromType> {
   static std::string convert(char from) {
     return std::string(&from);
   }
-
 };
 
 // simple convert
-template<typename FromType, typename ToType>
+template <typename ToType, typename FromType>
 ToType safe_cast(const FromType& from) {
-  return converter<FromType, ToType>::convert(from);
+  return converter<ToType, FromType>::convert(from);
 }
 
-
-#endif // __SAFE_CAST_HPP__
+#endif  // __SAFE_CAST_HPP__
