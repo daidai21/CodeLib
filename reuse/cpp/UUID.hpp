@@ -9,11 +9,12 @@
 #include <random>
 #include <sstream>
 
+// TODO
 // https://stackoverflow.com/questions/24365331/how-can-i-generate-uuid-in-c-without-using-boost-library
 // https://juejin.im/post/6864199183957262350
 
 /**
- * TODO: support thread safe
+ * support thread safe
  */
 class UUID {
  public:
@@ -41,6 +42,8 @@ class UUID {
 };
 
 std::string UUID::generate() {
+  std::unique_lock<std::mutex> lock(mtx_);
+
   switch (version_) {
     case 1:
       return generate_v1();
