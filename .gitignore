@@ -30,3 +30,6 @@ temp.txt
 .classpath
 reuse/java/bin/*
 .settings/
+
+# For golang
+!template/golang.project/third_party/

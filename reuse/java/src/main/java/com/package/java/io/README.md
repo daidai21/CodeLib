@@ -43,7 +43,7 @@
         * PipedOutputStream
         * ByteArrayOutputStream
 
-**按照流的角色划分**
+**按照流的角色/实现功能 划分**
 
 * 处理流
     * 缓冲操作
