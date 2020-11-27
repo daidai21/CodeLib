@@ -25,6 +25,8 @@ tmp*.*
 target/
 lib/
 temp.txt
+2temp.txt
+1temp.txt
 *Temp.java
 *temp.java
 .classpath
