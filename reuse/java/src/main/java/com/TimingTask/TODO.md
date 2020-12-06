@@ -8,4 +8,8 @@
     * 另外就是效率更高的时间轮的实现方案，代表有RingBufferWheel；
 
 
-https://www.jianshu.com/p/98c4ba7eaccc
+Timer和TimerTask
+
+JDK自带 ：JDK自带的Timer以及JDK1.5+ 新增的ScheduledExecutorService；
+Quartz ：简单却强大的JAVA作业调度框架
+Spring3.0以后自带的task ：可以将它看成一个轻量级的Quartz，而且使用起来比Quartz简单许多；

@@ -19,3 +19,6 @@ docker stop <容器 ID>
 
 #进入容器
 docker exec -it mysql bash
+
+# 运行Ubuntu镜像
+docker run -it ubuntu /bin/bash
