@@ -6,5 +6,9 @@ public class asListExample {
         String[] fruitNames = { "Apple", "Banana", "Orange" };
         List<String> fruitNamesList = Arrays.asList(fruitNames);
         System.out.println(fruitNamesList);
+
+        // Arrays.asList() 返回结果不可操作
+        // Exception in thread "main" java.lang.UnsupportedOperationException
+        fruitNamesList.add("asd");
     }
 }

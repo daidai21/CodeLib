@@ -42,3 +42,5 @@ public @interface MyAnnotation1 {
 
 */
 ```
+
+注解是aop的一种形式
