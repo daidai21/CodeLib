@@ -2,7 +2,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Field;
 
 
-public class printAllMethodsAndFieldsFromObject {
+public class PrintAllMethodsAndFieldsFromObject {
     public static void main(String[] args) {
         try {
             Class thisClass = printAllMethodsAndFieldsFromObject.class;

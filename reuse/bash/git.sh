@@ -38,9 +38,24 @@ git stash list
 # 撤销更改，删除 修改或新增的代码
 git checkout -- ${filename}
 
+
+# 撤销本地当前所有修改
+git checkout . && git clean -xdf
+
+
 # 添加子模块
 git submodule add git@github.com:daidai21/JavaFrameworkDemo.git ./reuse/java/src/main/java/com/JavaFrameworkDemo
 
 
 # 删除子模块  参数为主仓亏的路径地址
 git rm /Users/fwh/Documents/git-repo/self.lib/reuse/java/src/main/java/com/framework_tool_jar
+
+
+# 。
+git tag --list 
+
+# .
+git checkout <tag_name>
+
+# 查看当前所在的tag
+git describe --tags
