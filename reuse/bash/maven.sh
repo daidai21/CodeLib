@@ -21,3 +21,6 @@ mvn package -Dmaven.test.skip=true
 
 # mvn install skip test
 mvn install -Dmaven.test.skip=true 
+
+# 检车代码规范
+mvn checkstyle:check
