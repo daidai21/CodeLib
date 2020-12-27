@@ -1,6 +1,8 @@
 
 # `java.io.*`
 
+![](io.png)
+
 **按照操作单元划分**
 
 * 字符流: 读取单个字符，用来处理文本文件
@@ -21,6 +23,7 @@
         * PipedWriter
         * CharArrayWriter
         * FilterWriter
+        * PrintWriter
 * 字节流: 读取单个字节，用来处理二进制文件
     * InputStream
         * FileInputStream

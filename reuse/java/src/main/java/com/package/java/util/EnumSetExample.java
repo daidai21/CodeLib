@@ -1,4 +1,5 @@
 import java.util.EnumSet;
+import java.util.Set;
 
 public class EnumSetExample {
     public static void main(String[] args) {
@@ -11,9 +12,18 @@ public class EnumSetExample {
         System.out.println("Set 2: " + set2);
         System.out.println("Set 3: " + set3);
         System.out.println("Set 4: " + set4);
+
+        Set<Name> setNames = EnumSet.of(Name.JACK, Name.KING);
+        System.out.println(setNames);
+        EnumSet<Name> enumSetName = EnumSet.of(Name.JACK);
+        System.out.println(enumSetName);
     }
 }
 
 enum Color {
     RED, GREEN, BLOCK, YELLOW
+}
+
+enum Name {
+    JACK, KING, QUEEN
 }

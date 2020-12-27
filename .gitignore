@@ -35,3 +35,4 @@ reuse/java/bin/*
 
 # For golang
 !template/golang.project/third_party/
+tempCodeRunnerFile.java # For vscode
