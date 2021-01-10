@@ -1,32 +1,40 @@
 # 集合
 
+集合共有14种接口
+
 * **接口类&具体类**
     * Collection:  一二级为接口，三级为具体实现
-        * List
-            * LinkedList
-            * ArrayList
+        * List `interface`
+            * LinkedList: 通过双向链表实现
+            * ArrayList: 同比C++的std::vector
             * Vector
         * Set
-            * HashSet
-            * LinkedHashSet
+            * HashSet: 冲突链表方式，包装的HashMap
+            * LinkedHashSet: 包装的LinkedHashMap
             * TreeSet
         * SortedSet
-            * TreeSet
+            * TreeSet: 红黑树
+        * NavigableSet
         * Map
-            * HashMap
+            * HashMap: 冲突链表方式
+            * LinkedHashMap: HashMap+双向链表实现的
             * HashTable
             * TreeMap
-            * LinkedHashMap
             * WeakHashMap
-        * Map.Entry
+        <!-- * Map.Entry -->
         * SortedMap
-            * TreeMap
+            * TreeMap: 红黑树
+        * ConcurrentMap
+        * NavigableMap
+        * ConcurrentNavigableMap
         * Enumeration
         * Queue
             * PriorityQueue
             * LinkedList
         * Deque
             * ArrayDeque
+        * BlockingQueue
+        * BlockingDeque
 
 * **算法Collections**
     * ...
