@@ -20,7 +20,7 @@
             * LinkedHashMap: HashMap+双向链表实现的
             * HashTable
             * TreeMap
-            * WeakHashMap
+            * WeakHashMap: 有GC的Map，类似cache的作用
         <!-- * Map.Entry -->
         * SortedMap
             * TreeMap: 红黑树
@@ -29,7 +29,7 @@
         * ConcurrentNavigableMap
         * Enumeration
         * Queue
-            * PriorityQueue
+            * PriorityQueue: 保证每次取出的元素都是队列中权值最小的，小根堆实现的
             * LinkedList
         * Deque
             * ArrayDeque
