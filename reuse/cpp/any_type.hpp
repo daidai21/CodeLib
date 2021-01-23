@@ -17,6 +17,7 @@
 
 // TODO
 // https://github.com/chxuan/cpp-utils/blob/master/Any/Any.hpp
+// https://github.com/qicosmos/cosmos/blob/master/Any.hpp
 
 class AnyType {
  public:

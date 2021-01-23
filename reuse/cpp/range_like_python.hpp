@@ -12,3 +12,4 @@
 
 // TODO
 // https://github.com/chxuan/cpp-utils/blob/master/Range/README.md
+// https://github.com/qicosmos/cosmos/blob/master/Range.hpp

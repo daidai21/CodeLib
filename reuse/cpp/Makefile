@@ -17,3 +17,7 @@ count_down_latch_example:
 safe_cast_test:
 	g++ safe_cast_test.cpp -std=c++11 -o safe_cast_test.out
 	./safe_cast_test.out
+
+BaseAspect_example:
+	g++ BaseAspect_example.cpp -std=c++11 -o BaseAspect_example.out
+	./BaseAspect_example.out

@@ -24,6 +24,9 @@ c_line_num=$(find $path -type f | grep -E "\.c|\.h" | xargs wc -l | awk '{print 
 py_line_num=$(find $path -type f | grep "\.py" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
 sh_line_num=$(find $path -type f | grep "\.sh" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
 java_line_num=$(find $path -type f | grep "\.java" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
+sql_line_num=$(find $path -type f | grep "\.sql" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
+go_line_num=$(find $path -type f | grep "\.go" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
+js_line_num=$(find $path -type f | grep "\.js" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
 
 
 cpp_line_num=${cpp_line_num:-0}
@@ -31,6 +34,9 @@ c_line_num=${c_line_num:-0}
 py_line_num=${py_line_num:-0}
 sh_line_num=${sh_line_num:-0}
 java_line_num=${java_line_num:-0}
+sql_line_num=${sql_line_num:-0}
+go_line_num=${go_line_num:-0}
+js_line_num=${js_line_num:-0}
 
 
 echo "***** Code Total Result: *****"
@@ -39,8 +45,15 @@ echo "C: $c_line_num"
 echo "Python: $py_line_num"
 echo "Shell: $sh_line_num"
 echo "Java: $java_line_num"
+echo "SQL: $sql_line_num"
+echo "Golang: $go_line_num"
+echo "JavaScript: $js_line_num"
 echo "Total: " $( expr  $cpp_line_num + \
                         $c_line_num + \
                         $py_line_num + \
                         $sh_line_num + \
-                        $java_line_num)
+                        $java_line_num + \
+                        $sql_line_num + \
+                        $go_line_num + \
+                        $js_line_num \
+                )
