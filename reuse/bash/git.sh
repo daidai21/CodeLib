@@ -55,7 +55,7 @@ git rm /Users/fwh/Documents/git-repo/self.lib/reuse/java/src/main/java/com/frame
 git tag --list 
 
 # .
-git checkout <tag_name>
+git checkout ${tag_name}
 
 # 查看当前所在的tag
 git describe --tags
@@ -66,3 +66,6 @@ git push origin --delete ${remote_branch_name}
 
 # 删除本地分支
 git branch -d ${local_branch_name} 
+
+# 查看commit改动根据commit_id
+git show ${commit_id}
