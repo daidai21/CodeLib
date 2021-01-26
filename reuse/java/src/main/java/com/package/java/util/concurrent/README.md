@@ -2,6 +2,8 @@
 
 ![](concurrent.jpg)
 
+![](并发容器.png)
+
 **线程安全集合**
 
 * ConcurrentHashMap: 可以看作是线程安全的 HashMap
