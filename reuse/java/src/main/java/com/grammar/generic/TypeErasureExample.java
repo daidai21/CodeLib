@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 
 
+/**
+ * 泛型檫除
+ * 类型檫除
+ * fake generic
+ */
 public class TypeErasureExample {
     public static void main(String[] args) throws Exception {
         // 原始类型相等

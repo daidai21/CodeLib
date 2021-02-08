@@ -6,6 +6,13 @@
  *************************************************************************** */
 
 
+/**
+ * ring buffer
+ * 
+ * not support thread safe
+ * 
+ * TODO: support buf_size param init
+ */
 template<typename NodeType>
 class RingBuffer {
  public:
