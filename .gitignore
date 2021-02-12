@@ -12,12 +12,13 @@ temp*.sh
 __pycache__/
 push.sh
 third_party/
-# TODO
 tmp*.*
 *compile.sh
 *.exe
 *.class
 .DS_Store
+*.temp.log
+*.tmp.log
 
 # For java
 .idea

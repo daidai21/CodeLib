@@ -21,3 +21,7 @@ safe_cast_test:
 BaseAspect_example:
 	g++ BaseAspect_example.cpp -std=c++11 -o BaseAspect_example.out
 	./BaseAspect_example.out
+
+log_test:
+	g++ log_test.cpp -std=c++11 -o log_test.out
+	./log_test.out

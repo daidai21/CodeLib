@@ -136,7 +136,12 @@ class Logger {
     return instance.get();
   }
 
-  void init_log_file() {}
+  void init_log_file(std::string log_file_name = "output.log") {
+    if (this->file == true)
+      log_file.close();
+    log_file.open(log_file_name);
+    this->file = true;
+  }
 
   void set_level(int level) { this->level = LOG_LEVEL(level); }
   int get_level() { return this->level; }
@@ -202,6 +207,10 @@ std::mutex              Logger::mtx;
 #define LOG_LVL_INFO LOG_LVL(INFO)
 #define LOG_LVL_WARN LOG_LVL(WARN)
 #define LOG_LVL_ERRO LOG_LVL(ERRO)
+
+#define LOG_COUT (*log::Logger::get_instance()) += log::Message((*log::Logger::get_instance()).get_level(), __FILE__, __FUNCTION__, __LINE__)
+
+#define LOG_FILE(fn) (*log::Logger::get_instance()).init_log_file(fn);
 
 #define LOG_CONSOLE_OFF (*log::Logger::get_instance()).set_console(false)
 #define LOG_CONSOLE_ON  (*log::Logger::get_instance()).set_console(true)
