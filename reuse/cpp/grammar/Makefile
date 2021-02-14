@@ -20,3 +20,7 @@ pointer_circular_reference_example:
 null_object_pattern_get_binary_tree_size:
 	$(CXX) $(CXXFLAGS) null_object_pattern_get_binary_tree_size.cpp -o null_object_pattern_get_binary_tree_size.out
 	./null_object_pattern_get_binary_tree_size.out
+
+literal_operator_example:
+	g++ literal_operator_example.cpp -std=c++11 -o literal_operator_example.out
+	./literal_operator_example.out 
