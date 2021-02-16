@@ -1,13 +1,20 @@
 /* ****************************************************************************
- * File Name   : exception.hpp
+ * File Name   : tristate_example.cpp
  * Author      : DaiDai
  * Mail        : daidai4269@aliyun.com
- * Created Time: 二 11/10 11:12:03 2020
+ * Created Time: 一  2/15 02:30:23 2021
  *************************************************************************** */
 
 
 #include <iostream>
 
 
-// TODO
-// https://github.com/chronoxor/CppCommon/blob/master/include/errors/exceptions.h
+using namespace std;
+
+
+int main(int argc, char* argv[]) {
+  // TODO
+
+  return 0;
+}
+

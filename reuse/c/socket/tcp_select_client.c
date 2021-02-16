@@ -1,60 +1,141 @@
+#include <arpa/inet.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <netdb.h>
+#include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 #include <sys/select.h>
 #include <sys/socket.h>
-#include <strings.h>
-#include <arpa/inet.h>
+#include <sys/types.h>
+#include <time.h>
+#include <unistd.h>
 
+#define PORT 8000
+#define MAX_LINE 2048
 
-#define PORT     8000
-#define BUF_SIZE 1024
-
-
-#define max(a, b) (a > b ? a : b)
-
-// TODO
-ssize_t readline(int fd, char* vptr, size_t max_len) {
-  return ;
+int max(int a, int b) {
+  return a > b ? a : b;
 }
 
-void clie() {
+ssize_t readline(int fd, char* vptr, size_t maxlen) {
+  ssize_t n, rc;
+  char c, *ptr;
+  ptr = vptr;
+  for (n = 1; n < maxlen; n++) {
+    if ((rc = read(fd, &c, 1)) == 1) {
+      *ptr++ = c;
+      if (c == '\n')
+        break; /* newline is stored, like fgets() */
+    } else if (rc == 0) {
+      *ptr = 0;
+      return (n - 1); /* EOF, n - 1 bytes were read */
+    } else
+      return (-1); /* error, errno set by read() */
+  }
+
+  *ptr = 0; /* null terminate like fgets() */
+  return (n);
 }
 
-void clie_select() {
+/*普通客户端消息处理函数*/
+void str_cli(int sockfd) {
+  /*发送和接收缓冲区*/
+  char sendline[MAX_LINE], recvline[MAX_LINE];
+  while (fgets(sendline, MAX_LINE, stdin) != NULL) {
+    write(sockfd, sendline, strlen(sendline));
+
+    bzero(recvline, MAX_LINE);
+    if (readline(sockfd, recvline, MAX_LINE) == 0) {
+      perror("server terminated prematurely");
+      exit(1);
+    }
+
+    if (fputs(recvline, stdout) == EOF) {
+      perror("fputs error");
+      exit(1);
+    }
+
+    bzero(sendline, MAX_LINE);
+  }
+}
+
+/*采用select的客户端消息处理函数*/
+void str_cli_select(FILE* fp, int sockfd) {
+  int maxfd;
+  fd_set rset;
+  /*发送和接收缓冲区*/
+  char sendline[MAX_LINE], recvline[MAX_LINE];
+
+  FD_ZERO(&rset);
+  while (1) {
+    /*将文件描述符和套接字描述符添加到rset描述符集*/
+    FD_SET(fileno(fp), &rset);
+    FD_SET(sockfd, &rset);
+    maxfd = max(fileno(fp), sockfd) + 1;
+    select(maxfd, &rset, NULL, NULL, NULL);
+
+    if (FD_ISSET(fileno(fp), &rset)) {
+      if (fgets(sendline, MAX_LINE, fp) == NULL) {
+        printf("read nothing~\n");
+        close(sockfd); /*all done*/
+        return;
+      }
+      sendline[strlen(sendline) - 1] = '\0';
+      write(sockfd, sendline, strlen(sendline));
+    }
+
+    if (FD_ISSET(sockfd, &rset)) {
+      if (readline(sockfd, recvline, MAX_LINE) == 0) {
+        perror("handleMsg: server terminated prematurely.\n");
+        exit(1);
+      }
+
+      if (fputs(recvline, stdout) == EOF) {
+        perror("fputs error");
+        exit(1);
+      }
+    }
+  }
 }
 
 int main(int argc, char* argv[]) {
-  // judge input valid
-  if (argc != 2) {
-    perror("input IP address");
-    exit(1);
-  }
-  // declare socket and link server address
-  int sock_fd;
-  struct sockaddr_in serv_addr;
-  // create socket
-  if ( (sock_fd = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
-    perror("socket() error");
-    exit(1);
-  }
-  // config link server address structure
-  bzero(&serv_addr, sizeof(serv_addr));
-  serv_addr.sin_family = AF_INET;
-  serv_addr.sin_port   = htons(PORT);
-  if (inet_pton(AF_INET, argv[1], &serv_addr.sin_addr) < 0) {
-    printf("inet_pton() error for %s\n", argv[1]);
-    exit(1);
-  }
-  // send link server request
-  if (connect(sock_fd, (struct sockaddr_in*)& serv_addr, sizeof(serv_addr)) < 0) {
-    perror("connect() error");
-    exit(1);
-  }
-  // call msg handle function
-  clie(sock_fd);
-  // call msg handle function with select()
-  // clie_select(stdin, sock_fd);
+  /*声明套接字和链接服务器地址*/
+  int sockfd;
+  struct sockaddr_in servaddr;
 
+  /*判断是否为合法输入*/
+  if (argc != 2) {
+    perror("usage:tcpcli <IPaddress>");
+    exit(1);
+  }
+
+  /*(1) 创建套接字*/
+  if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+    perror("socket error");
+    exit(1);
+  }
+
+  /*(2) 设置链接服务器地址结构*/
+  bzero(&servaddr, sizeof(servaddr));
+  servaddr.sin_family = AF_INET;
+  servaddr.sin_port = htons(PORT);
+  if (inet_pton(AF_INET, argv[1], &servaddr.sin_addr) < 0) {
+    printf("inet_pton error for %s\n", argv[1]);
+    exit(1);
+  }
+
+  /*(3) 发送链接服务器请求*/
+  if (connect(sockfd, (struct sockaddr*)&servaddr, sizeof(servaddr)) < 0) {
+    perror("connect error");
+    exit(1);
+  }
+
+  /*调用普通消息处理函数*/
+  str_cli(sockfd);
+  /*调用采用select技术的消息处理函数*/
+  // str_cli_select(stdin, sockfd);
+  exit(0);
   return 0;
 }

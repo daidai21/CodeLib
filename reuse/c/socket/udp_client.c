@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
     perror("inet_pton() error");
     exit(1);
   }
-  if ( (sock_fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+  if ( (sock_fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) { // SOCK_DGRAM 指定socket类型UDP
     perror("socket() error");
     exit(1);
   }

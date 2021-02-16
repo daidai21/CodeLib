@@ -1,33 +1,29 @@
-/* =============================================================================
-> File Name: tcp_epoll_client.c
-> Author: DaiDai
-> Mail: daidai4269@aliyun.com
-> Created Time: Fri 13 Mar 2020 10:17:22 PM CST
-============================================================================= */
+/* ****************************************************************************
+ * File Name   : tcp_client.c
+ * Author      : DaiDai
+ * Mail        : daidai4269@aliyun.com
+ * Created Time: 一  2/15 21:15:01 2021
+ *************************************************************************** */
 
 #include <arpa/inet.h>
 #include <errno.h>
-#include <fcntl.h>
 #include <netdb.h>
 #include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/select.h>
 #include <sys/socket.h>
 #include <sys/types.h>
-#include <time.h>
 #include <unistd.h>
 
-#define PORT 7777
-#define MAX_LINE 2048
-
-int max(int a, int b) {
-  return a > b ? a : b;
-}
+const int MAX_LINE = 2048;
+const int PORT = 6000;
+const int BACKLOG = 10;
+const int LISTENQ = 6666;
+const int MAX_CONNECT = 20;
 
 /*readline函数实现*/
-ssize_t readline(int fd, char *vptr, size_t maxlen) {
+ssize_t readline(int fd, char* vptr, size_t maxlen) {
   ssize_t n, rc;
   char c, *ptr;
 
@@ -48,29 +44,7 @@ ssize_t readline(int fd, char *vptr, size_t maxlen) {
   return (n);
 }
 
-/*普通客户端消息处理函数*/
-void str_cli(int sockfd) {
-  /*发送和接收缓冲区*/
-  char sendline[MAX_LINE], recvline[MAX_LINE];
-  while (fgets(sendline, MAX_LINE, stdin) != NULL) {
-    write(sockfd, sendline, strlen(sendline));
-
-    bzero(recvline, MAX_LINE);
-    if (readline(sockfd, recvline, MAX_LINE) == 0) {
-      perror("server terminated prematurely");
-      exit(1);
-    }
-
-    if (fputs(recvline, stdout) == EOF) {
-      perror("fputs error");
-      exit(1);
-    }
-
-    bzero(sendline, MAX_LINE);
-  }
-}
-
-int main(int argc, char **argv) {
+int main(int argc, char* argv[]) {
   /*声明套接字和链接服务器地址*/
   int sockfd;
   struct sockaddr_in servaddr;
@@ -86,7 +60,6 @@ int main(int argc, char **argv) {
     perror("socket error");
     exit(1);
   }
-
   /*(2) 设置链接服务器地址结构*/
   bzero(&servaddr, sizeof(servaddr));
   servaddr.sin_family = AF_INET;
@@ -97,12 +70,27 @@ int main(int argc, char **argv) {
   }
 
   /*(3) 发送链接服务器请求*/
-  if (connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) < 0) {
+  if (connect(sockfd, (struct sockaddr*)&servaddr, sizeof(servaddr)) < 0) {
     perror("connect error");
     exit(1);
   }
+  /*(4) 消息处理*/
+  char sendline[MAX_LINE], recvline[MAX_LINE];
+  while (fgets(sendline, MAX_LINE, stdin) != NULL) {
+    write(sockfd, sendline, strlen(sendline));
 
-  /*调用消息处理函数*/
-  str_cli(sockfd);
-  exit(0);
+    if (readline(sockfd, recvline, MAX_LINE) == 0) {
+      perror("server terminated prematurely");
+      exit(1);
+    }
+
+    if (fputs(recvline, stdout) == EOF) {
+      perror("fputs error");
+      exit(1);
+    }
+  }
+
+  /*(5) 关闭套接字*/
+  close(sockfd);
+  return 0;
 }
