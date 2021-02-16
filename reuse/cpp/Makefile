@@ -25,3 +25,8 @@ BaseAspect_example:
 log_test:
 	g++ log_test.cpp -std=c++11 -o log_test.out
 	./log_test.out
+
+
+AtomicType_test:
+	g++ AtomicType_test.cpp -std=c++11 -o AtomicType_test.out
+	./AtomicType_test.out
