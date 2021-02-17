@@ -69,3 +69,6 @@ git branch -d ${local_branch_name}
 
 # 查看commit改动根据commit_id
 git show ${commit_id}
+
+# 查看某个commit_id修改了哪些文件
+git show --name-only  --oneline ${commit_id}
