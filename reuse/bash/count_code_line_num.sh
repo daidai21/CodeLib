@@ -9,6 +9,9 @@
 # #############################################################################
 
 
+# set -ex
+
+
 path=$1
 if [ -z "$path" ]
 then
@@ -24,7 +27,7 @@ c_line_num=$(find $path -type f | grep -E "\.c|\.h" | xargs wc -l | awk '{print 
 py_line_num=$(find $path -type f | grep "\.py" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
 sh_line_num=$(find $path -type f | grep "\.sh" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
 java_line_num=$(find $path -type f | grep "\.java" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
-sql_line_num=$(find $path -type f | grep "\.sql" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
+sql_line_num=$(find $path -type f | grep "\.sql|\.SQL" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
 go_line_num=$(find $path -type f | grep "\.go" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
 js_line_num=$(find $path -type f | grep "\.js" | xargs wc -l | awk '{print $1}' | awk 'END {print}' )
 
