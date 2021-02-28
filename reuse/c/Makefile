@@ -1,4 +1,5 @@
-
+CXX=g++
+CC=gcc
 
 exec_file_zero_copy_example:
 	mkfile -n 1g read_big_file.dat
@@ -10,3 +11,6 @@ exec_file_zero_copy_example:
 
 	rm read_big_file.dat
 	rm write_big_file.dat
+
+gc_example:  gc_example_test.c
+	$(CC) -std=c99 -O3 -o gc_example_test.out gc_example_test.c
