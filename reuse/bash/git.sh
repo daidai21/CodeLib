@@ -72,3 +72,9 @@ git show ${commit_id}
 
 # 查看某个commit_id修改了哪些文件
 git show --name-only  --oneline ${commit_id}
+
+# 查看git仓库的root路径
+git rev-parse --show-toplevel
+
+# 跳转到git仓库的root路径
+cd $(git rev-parse --show-cdup)
