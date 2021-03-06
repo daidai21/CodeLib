@@ -1,6 +1,3 @@
-[submodule "libdd"]
-	path = lib
-	url = https://github.com/daidai21/libdd.git
 [submodule "template/JavaBizProjectTemplate"]
 	path = template/Java.project
 	url = https://github.com/daidai21/JavaBizProjectTemplate.git
