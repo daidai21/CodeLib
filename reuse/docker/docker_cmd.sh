@@ -31,3 +31,9 @@ docker image ls
 
 # 查看某个镜像的详细信息
 docker inspect <image_name>
+
+# 查看正在运行的容器
+docker ps
+
+# 运行容器不保存运行中产生的信息
+docker run -it --rm <容器 ID>
