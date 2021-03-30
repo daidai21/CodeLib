@@ -1,6 +1,6 @@
 all:	build \
 		run \
-		clean \
+		clean
 
 build:	build_hello
 
@@ -22,7 +22,18 @@ run:	run_hello \
 		run_multi_dimension_arr \
 		run_pointer_arr \
 		run_pointer_to_pointer \
-		run_fn_ptr_param
+		run_fn_ptr_param \
+		run_pointer \
+		run_structure \
+		run_slice \
+		run_range \
+		run_map \
+		run_recursion_func \
+		run_type_change \
+		run_interface \
+		run_deal_err \
+		run_channel \
+		run_goroutine
 
 clean:
 	rm *.out
@@ -88,3 +99,36 @@ run_pointer_to_pointer:
 
 run_fn_ptr_param:
 	go run fn_ptr_param.go
+
+run_pointer:
+	go run pointer.go
+
+run_structure:
+	go run structure.go
+
+run_slice:
+	go run slice.go
+
+run_range:
+	go run range.go
+
+run_map:
+	go run map.go
+
+run_recursion_func:
+	go run recursion_func.go
+
+run_type_change:
+	go run type_change.go
+
+run_interface:
+	go run interface.go
+
+run_deal_err:
+	go run deal_err.go
+
+run_channel:
+	go run channel.go
+
+run_goroutine:
+	go run goroutine.go

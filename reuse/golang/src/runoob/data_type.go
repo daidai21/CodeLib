@@ -5,7 +5,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func main() {
@@ -14,14 +13,25 @@ func main() {
 	fmt.Println("bool: ", b)
 
 	// 数字类型
-	// TODO
-	os.Exit(1)
+	// uint8
+	// uint16
+	// uint32
+	// uint64
+	// int8
+	// int16
+	// int32
+	// int64
 
 	// 浮点型
+	// float32
+	// float64
+	// complex64
+	// complex128
 
 	// 其他数字类型
 	// byte
 	// rune
+	// uint
 	// int
 	// uintptr
 
