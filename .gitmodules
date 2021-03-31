@@ -1,6 +1,3 @@
 [submodule "template/JavaBizProjectTemplate"]
 	path = template/Java.project
 	url = https://github.com/daidai21/JavaBizProjectTemplate.git
-[submodule "reuse/java/src/main/java/com/JavaFrameworkDemo"]
-	path = reuse/java/src/main/java/com/JavaFrameworkDemo
-	url = git@github.com:daidai21/JavaFrameworkDemo.git
