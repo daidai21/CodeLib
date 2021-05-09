@@ -6,3 +6,10 @@
 
 
 `add_subdirectory(source_dir)`
+
+
+
+* `include_directories`  添加头文件
+* `link_directories(${LINK_DIR})`  找库 .so .dll .dylib
+* `target_link_libraries`  要链接的库
+* `FIND_PACKAGE`
