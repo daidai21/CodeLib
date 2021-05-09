@@ -14,3 +14,10 @@ exec_file_zero_copy_example:
 
 gc_example:  gc_example_test.c
 	$(CC) -std=c99 -O3 -o gc_example_test.out gc_example_test.c
+
+
+# https://github.com/sogou/workflow/blob/13a343b439/src/kernel/msgqueue.h
+msg_que_example:
+	$(CC) -std=c99 -O3 -pthread msg_que_example.c msg_que.c \
+		-o msg_que_example.out
+	./msg_que_example.out
