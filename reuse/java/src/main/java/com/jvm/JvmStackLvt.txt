@@ -1,0 +1,101 @@
+Classfile /Users/fwh/Documents/git-repo/CodeLib/reuse/java/src/main/java/com/jvm/JvmStackLvt.class
+  Last modified 2021年5月25日; size 560 bytes
+  SHA-256 checksum 7ff5e2ee205401721249c7169efe59c17bf8608d55c62f116ad22bedd3732171
+  Compiled from "JvmStackLvt.java"
+public class JvmStackLvt
+  minor version: 0
+  major version: 59
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #7                          // JvmStackLvt
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 2, attributes: 1
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = Class              #8             // JvmStackLvt
+   #8 = Utf8               JvmStackLvt
+   #9 = Utf8               Code
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               LocalVariableTable
+  #12 = Utf8               this
+  #13 = Utf8               LJvmStackLvt;
+  #14 = Utf8               showLvt
+  #15 = Utf8               (BCIJ)I
+  #16 = Utf8               b
+  #17 = Utf8               B
+  #18 = Utf8               c
+  #19 = Utf8               C
+  #20 = Utf8               i
+  #21 = Utf8               I
+  #22 = Utf8               l
+  #23 = Utf8               J
+  #24 = Utf8               f
+  #25 = Utf8               F
+  #26 = Utf8               d
+  #27 = Utf8               D
+  #28 = Utf8               bool
+  #29 = Utf8               Z
+  #30 = Utf8               ref
+  #31 = Utf8               Ljava/lang/Object;
+  #32 = Utf8               ret
+  #33 = Utf8               SourceFile
+  #34 = Utf8               JvmStackLvt.java
+{
+  public JvmStackLvt();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 1: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LJvmStackLvt;
+
+  public int showLvt(byte, char, int, long);
+    descriptor: (BCIJ)I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=12, args_size=5
+         0: fconst_0
+         1: fstore        6
+         3: dconst_0
+         4: dstore        7
+         6: iconst_0
+         7: istore        9
+         9: new           #2                  // class java/lang/Object
+        12: dup
+        13: invokespecial #1                  // Method java/lang/Object."<init>":()V
+        16: astore        10
+        18: iload_3
+        19: istore        11
+        21: iload         11
+        23: ireturn
+      LineNumberTable:
+        line 3: 0
+        line 4: 3
+        line 5: 6
+        line 6: 9
+        line 7: 18
+        line 8: 21
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      24     0  this   LJvmStackLvt;
+            0      24     1     b   B
+            0      24     2     c   C
+            0      24     3     i   I
+            0      24     4     l   J
+            3      21     6     f   F
+            6      18     7     d   D
+            9      15     9  bool   Z
+           18       6    10   ref   Ljava/lang/Object;
+           21       3    11   ret   I
+}
+SourceFile: "JvmStackLvt.java"

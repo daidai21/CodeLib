@@ -1,0 +1,212 @@
+Classfile /Users/fwh/Documents/git-repo/CodeLib/reuse/java/src/main/java/com/jvm/MethodAreaRtcp.class
+  Last modified 2021年5月25日; size 1533 bytes
+  SHA-256 checksum 48314fc98fe59a1c64a48ba0835a7edc39bdc74a02214f484f642dfa980e9c58
+  Compiled from "MethodAreaRtcp.java"
+public class MethodAreaRtcp
+  minor version: 0
+  major version: 59
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #10                         // MethodAreaRtcp
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 12, methods: 3, attributes: 3
+Constant pool:
+    #1 = Methodref          #2.#3         // java/lang/Object."<init>":()V
+    #2 = Class              #4            // java/lang/Object
+    #3 = NameAndType        #5:#6         // "<init>":()V
+    #4 = Utf8               java/lang/Object
+    #5 = Utf8               <init>
+    #6 = Utf8               ()V
+    #7 = String             #8            // hello
+    #8 = Utf8               hello
+    #9 = Fieldref           #10.#11       // MethodAreaRtcp.str1:Ljava/lang/String;
+   #10 = Class              #12           // MethodAreaRtcp
+   #11 = NameAndType        #13:#14       // str1:Ljava/lang/String;
+   #12 = Utf8               MethodAreaRtcp
+   #13 = Utf8               str1
+   #14 = Utf8               Ljava/lang/String;
+   #15 = Fieldref           #10.#16       // MethodAreaRtcp.i1:I
+   #16 = NameAndType        #17:#18       // i1:I
+   #17 = Utf8               i1
+   #18 = Utf8               I
+   #19 = Fieldref           #10.#20       // MethodAreaRtcp.i2:I
+   #20 = NameAndType        #21:#18       // i2:I
+   #21 = Utf8               i2
+   #22 = Methodref          #23.#24       // java/lang/String.length:()I
+   #23 = Class              #25           // java/lang/String
+   #24 = NameAndType        #26:#27       // length:()I
+   #25 = Utf8               java/lang/String
+   #26 = Utf8               length
+   #27 = Utf8               ()I
+   #28 = Fieldref           #10.#29       // MethodAreaRtcp.i5:I
+   #29 = NameAndType        #30:#18       // i5:I
+   #30 = Utf8               i5
+   #31 = Fieldref           #10.#32       // MethodAreaRtcp.i6:I
+   #32 = NameAndType        #33:#18       // i6:I
+   #33 = Utf8               i6
+   #34 = Fieldref           #10.#35       // MethodAreaRtcp.s1:S
+   #35 = NameAndType        #36:#37       // s1:S
+   #36 = Utf8               s1
+   #37 = Utf8               S
+   #38 = Fieldref           #10.#39       // MethodAreaRtcp.b1:B
+   #39 = NameAndType        #40:#41       // b1:B
+   #40 = Utf8               b1
+   #41 = Utf8               B
+   #42 = Fieldref           #10.#43       // MethodAreaRtcp.c1:C
+   #43 = NameAndType        #44:#45       // c1:C
+   #44 = Utf8               c1
+   #45 = Utf8               C
+   #46 = Double             0.1d
+   #48 = Fieldref           #10.#49       // MethodAreaRtcp.d1:D
+   #49 = NameAndType        #50:#51       // d1:D
+   #50 = Utf8               d1
+   #51 = Utf8               D
+   #52 = Float              0.2f
+   #53 = Fieldref           #10.#54       // MethodAreaRtcp.f1:F
+   #54 = NameAndType        #55:#56       // f1:F
+   #55 = Utf8               f1
+   #56 = Utf8               F
+   #57 = InvokeDynamic      #0:#58        // #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #58 = NameAndType        #59:#60       // makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #59 = Utf8               makeConcatWithConstants
+   #60 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+   #61 = String             #62           // this is constant
+   #62 = Utf8               this is constant
+   #63 = Fieldref           #10.#64       // MethodAreaRtcp.i3:I
+   #64 = NameAndType        #65:#18       // i3:I
+   #65 = Utf8               i3
+   #66 = Utf8               ConstantValue
+   #67 = Integer            2
+   #68 = Utf8               i4
+   #69 = Integer            4
+   #70 = Integer            6
+   #71 = Integer            8
+   #72 = Integer            9
+   #73 = Integer            49
+   #74 = Utf8               Code
+   #75 = Utf8               LineNumberTable
+   #76 = Utf8               LocalVariableTable
+   #77 = Utf8               this
+   #78 = Utf8               LMethodAreaRtcp;
+   #79 = Utf8               f
+   #80 = Utf8               str2
+   #81 = Utf8               str3
+   #82 = Utf8               i7
+   #83 = Utf8               <clinit>
+   #84 = Utf8               SourceFile
+   #85 = Utf8               MethodAreaRtcp.java
+   #86 = Utf8               BootstrapMethods
+   #87 = MethodHandle       6:#88         // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+   #88 = Methodref          #89.#90       // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+   #89 = Class              #91           // java/lang/invoke/StringConcatFactory
+   #90 = NameAndType        #59:#92       // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+   #91 = Utf8               java/lang/invoke/StringConcatFactory
+   #92 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+   #93 = String             #94           // \u0001 world
+   #94 = Utf8               \u0001 world
+   #95 = Utf8               InnerClasses
+   #96 = Class              #97           // java/lang/invoke/MethodHandles$Lookup
+   #97 = Utf8               java/lang/invoke/MethodHandles$Lookup
+   #98 = Class              #99           // java/lang/invoke/MethodHandles
+   #99 = Utf8               java/lang/invoke/MethodHandles
+  #100 = Utf8               Lookup
+{
+  public MethodAreaRtcp();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: ldc           #7                  // String hello
+         7: putfield      #9                  // Field str1:Ljava/lang/String;
+        10: aload_0
+        11: iconst_1
+        12: putfield      #15                 // Field i1:I
+        15: aload_0
+        16: iconst_2
+        17: putfield      #19                 // Field i2:I
+        20: aload_0
+        21: aload_0
+        22: getfield      #9                  // Field str1:Ljava/lang/String;
+        25: invokevirtual #22                 // Method java/lang/String.length:()I
+        28: putfield      #28                 // Field i5:I
+        31: aload_0
+        32: bipush        6
+        34: putfield      #31                 // Field i6:I
+        37: aload_0
+        38: bipush        8
+        40: putfield      #34                 // Field s1:S
+        43: aload_0
+        44: bipush        9
+        46: putfield      #38                 // Field b1:B
+        49: aload_0
+        50: bipush        49
+        52: putfield      #42                 // Field c1:C
+        55: aload_0
+        56: ldc2_w        #46                 // double 0.1d
+        59: putfield      #48                 // Field d1:D
+        62: aload_0
+        63: ldc           #52                 // float 0.2f
+        65: putfield      #53                 // Field f1:F
+        68: return
+      LineNumberTable:
+        line 1: 0
+        line 2: 4
+        line 3: 10
+        line 4: 15
+        line 7: 20
+        line 8: 31
+        line 9: 37
+        line 10: 43
+        line 11: 49
+        line 12: 55
+        line 13: 62
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      69     0  this   LMethodAreaRtcp;
+
+  public void f();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=4, args_size=1
+         0: aload_0
+         1: getfield      #9                  // Field str1:Ljava/lang/String;
+         4: invokedynamic #57,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+         9: astore_1
+        10: ldc           #61                 // String this is constant
+        12: astore_2
+        13: bipush        7
+        15: istore_3
+        16: return
+      LineNumberTable:
+        line 15: 0
+        line 16: 10
+        line 17: 13
+        line 18: 16
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      17     0  this   LMethodAreaRtcp;
+           10       7     1  str2   Ljava/lang/String;
+           13       4     2  str3   Ljava/lang/String;
+           16       1     3    i7   I
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: iconst_3
+         1: putstatic     #63                 // Field i3:I
+         4: return
+      LineNumberTable:
+        line 5: 0
+}
+SourceFile: "MethodAreaRtcp.java"
+BootstrapMethods:
+  0: #87 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #93 \u0001 world
+InnerClasses:
+  public static final #100= #96 of #98;   // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles

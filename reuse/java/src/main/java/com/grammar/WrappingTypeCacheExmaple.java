@@ -29,8 +29,8 @@ public class WrappingTypeCacheExmaple {
          * Boolean	true, false
          */
 
-        String integerCacheHighPropValue = sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
-        System.out.println("integerCacheHighPropValue=" + integerCacheHighPropValue);
+        // String integerCacheHighPropValue = sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
+        // System.out.println("integerCacheHighPropValue=" + integerCacheHighPropValue);
     }
 
 }
