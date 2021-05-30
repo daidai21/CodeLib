@@ -46,9 +46,38 @@
     * Properties
     * BitSet
 
-===
+![java.util.*](util.png)
 
-https://raw.githubusercontent.com/Snailclimb/JavaGuide/master/docs/java/collection/images/Java-Collections.jpeg
+## String、StringBuffer、StringBuilder
 
+|  | String | StringBuffer | StringBuilder |
+| :-: | :-: | :-: | :-: |
+| 原理 | 每次字符串操作都是生产新的String对象 | 和StringBuilder原理一样，只是加了锁 | 类似std::string |
+| 是否可变 | 否 | 是 | 是 |
+| 是否线程安全 | 是 | 是 | 否 |
+| 使用场景 | 操作少量的数据 | 多线程操作大量数据 | 单线程操作大量数据 |
 
-![](util.png)
+## Vector、ArrayList、LinkedList
+
+|  | Vector | ArrayList | LinkedList |
+| :-: | :-: | :-: | :-: |
+| 原理 | 和ArrayList一样，加了锁 | 可变大小的数组 | 双向链表 |
+| 是否线程安全 | 是 | 否 | 否 |
+| get() |  | O(1) | O(n) |
+| add() |  | O(1) | O(1) |
+| remove() |  | O(n) | O(n) |
+
+## HashMap、LinkedHashMap、HashTable、TreeMap、WeakHashMap
+
+|  | HashMap | LinkedHashMap | HashTable | TreeMap | WeakHashMap |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| 原理 | 冲突链表方式 | HashMap+双向链表实现的 |  | 红黑二叉树的NavigableMap的实现 | 有GC的Map，类似cache的作用 |
+| 优点 |  |  |  |  |  |
+| 缺点 |  |  | 多线程操作锁是在整个table上的，效率低下 |  |  |
+| 是否线程安全 |  |  | 是 | 否 |  |
+
+## HashSet、LinkedHashSet、TreeSet、SortedSet、TreeSet、NavigableSet
+
+Set和Map基本一样， value是null类型
+
+## Queue & Stack
