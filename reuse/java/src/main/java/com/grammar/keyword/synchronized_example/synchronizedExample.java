@@ -21,6 +21,3 @@ public class synchronizedExample {
     // 修饰静态方法
     synchronized static void func2() {}
 }
-
-// TODO
-// https://juejin.im/post/6844903482114195463

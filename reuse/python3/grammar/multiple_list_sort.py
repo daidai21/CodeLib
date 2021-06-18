@@ -10,9 +10,6 @@
 # =============================================================================
 
 
-# TODO: haven't test
-
-
 def multiple_list_sort(*lsts):
     err_msg = "The lenghth of input all list must be same."
     assert len(set([len(lst) for lst in lsts])) == 1, err_msg

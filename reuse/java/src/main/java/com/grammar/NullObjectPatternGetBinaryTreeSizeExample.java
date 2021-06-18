@@ -1,8 +1,6 @@
 import javax.lang.model.type.NullType;
 
 
-// TODO:bug
-
 /**
  * null object pattern, used example
  */
@@ -15,16 +13,27 @@ public class NullObjectPatternGetBinaryTreeSizeExample {
                 new Node()
             )
         );
-        System.out.println(tree_node_num(root));
+        System.out.println(root.total());  // expect: 5
+        Node root2 = new Node(
+            new Node(),
+            new Node(
+                new Node(),
+                new Node(
+                    new Node(
+                        new Node(
+                            new Node(),
+                            new Node()            
+                        ),
+                        new Node()
+                    ),
+                    new Node()
+                )
+            )
+        );
+        System.out.println(root2.total());  // expect: 11
+
     }
 
-    private static int tree_node_num(Node node) {
-        return tree_node_num(node.left) + tree_node_num(node.right) + 1;
-    }
-
-    private int tree_node_num(NullType nil) {
-        return 0;
-    }
 }
 
 class Node {
@@ -35,6 +44,14 @@ class Node {
         this.right = right;
     }
 
-    Node left;
-    Node right;
+    private Node left;
+    private Node right;
+
+    public int total() {
+        return total(left) + total(right) + 1;
+    }
+
+    private int total(Node node) {
+        return node == null ? 0 : (total(node.left) + total(node.right) + 1);
+    }
 }

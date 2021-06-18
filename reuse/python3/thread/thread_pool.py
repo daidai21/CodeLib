@@ -16,6 +16,3 @@ from concurrent.futures import ThreadPoolExecutor
 
 # third_party lib
 import threadpool
-
-
-# TODO: self define

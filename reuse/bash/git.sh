@@ -33,7 +33,7 @@ git stash
 git stash list
 
 # clone并拉取所有子仓库
-# TODO
+git clone --recurse-submodules -j8 git://github.com/foo/bar.git
 
 # 撤销更改，删除 修改或新增的代码
 git checkout -- ${filename}

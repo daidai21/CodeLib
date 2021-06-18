@@ -18,6 +18,7 @@ public class ModifyPrivateVariableWithReflect {
         }
 
         // private final var
+        // 修改final变量
         // TODO
 
         // private method to public method

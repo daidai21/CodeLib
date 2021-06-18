@@ -10,9 +10,6 @@
 # =============================================================================
 
 
-# TODO: test logic error and performance && the code is a demo version
-
-
 RUN = 32
 
 

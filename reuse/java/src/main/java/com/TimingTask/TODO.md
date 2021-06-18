@@ -13,3 +13,8 @@ Timer和TimerTask
 JDK自带 ：JDK自带的Timer以及JDK1.5+ 新增的ScheduledExecutorService；
 Quartz ：简单却强大的JAVA作业调度框架
 Spring3.0以后自带的task ：可以将它看成一个轻量级的Quartz，而且使用起来比Quartz简单许多；
+
+===
+
+[CircularFifoBuffer](https://commons.apache.org/proper/commons-collections/javadocs/api-3.2.2/org/apache/commons/collections/buffer/CircularFifoBuffer.html)
+

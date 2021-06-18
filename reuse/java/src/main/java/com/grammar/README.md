@@ -190,6 +190,18 @@ WeakReference<House> buyer3 = new WeakReference<House>(seller);
 PhantomReference<House> buyer4 = new PhantomReference<House>(seller, null);
 ```
 
+![](reference.jpeg)
+
+
+Java 4种引用的级别由高到低依次为： 强引用 > 软引用 > 弱引用 > 虚引用
+
+| 引用类型 | 被垃圾回收时间 | 用途 | 生存时间 |
+| :-: | :-: | :-: | :-: |
+| 强引用 | 从来不会 | 对象的一般状态 | JVM停止运行终止 |
+| 软引用 | 在内存不足时 | 对象缓存 | 内存不足时终止 |
+| 弱引用 | 在垃圾回收时 | 对象缓存 | gc运行后终止 |
+| 虚引用 | Unknown | Unknown | Unknown |
+
 ## java创建多线程的4种方法（Thread, Runnable, Callable, ThreadPool）
 
 ## 线程间的通信方式（wait(), notify(), notifyAll()）

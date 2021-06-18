@@ -49,3 +49,30 @@ https://doc.codingdict.com/java_api/java/util/concurrent/BlockingQueue.html
 
 https://www.cnblogs.com/teach/p/10665947.html
 https://www.jianshu.com/p/9394b257fdde
+
+===
+
+有界队列：就是有固定大小的队列
+无界队列：指的是没有设置固定大小的队列
+
+===
+
+# CopyOnWriteArrayList
+
+优点：
+保证多线程的并发读写的线程安全
+数据一致性完整  因为加锁了，并发数据不会乱
+解决了像ArrayList、Vector这种集合多线程遍历迭代问题
+    线程a在遍历list b，然后线程c写入数据，a在遍历的还是list b的修改前的情况
+    https://segmentfault.com/a/1190000010277948  ArrayList使用的计数器机制  多线程遍历修改会出现ConcurrentModificationException问题
+
+
+缺点：
+内存消耗大
+保证数据的最终一致性，不能保证数据的实时一致性。 实时性不高
+
+场景：
+读多写少
+集合不大
+
+比如白名单，黑名单，商品类目的访问和更新场景
