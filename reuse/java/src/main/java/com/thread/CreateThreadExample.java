@@ -41,5 +41,8 @@ public class CreateThreadExample {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+        service.shutdown();
+
+        // 4.线程池
     }
 }

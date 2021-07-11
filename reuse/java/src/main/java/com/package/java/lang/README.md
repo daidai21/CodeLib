@@ -55,3 +55,21 @@ try {
     threadLocal.remove();
 }
 ```
+
+===
+
+
+Thread Local Storage (TLS)
+
+https://github.com/alibaba/transmittable-thread-local
+
+ThreadLocalMap
+
+二级map = { threadId: { key: value, ... }... }
+
+多线程安全性解决方案
+1. 采用synchronized进行同步控制，但是效率略低，使得并发变同步（串行）
+2. 采用ThreadLocal线程本地存储，为每个使用该变量的线程都存储一个本地变量副本（线程互不相干）
+两种线程安全方案的区别
+1. synchronized同步机制采用了“以时间换空间”的方式，仅仅只提供一份变量，让参与的多个不同的线程排队进行访问
+2. ThreadLocal采用“以空间换时间”的方式，为参与的每个线程都各自提供一份本地副本，因此可以做到同时访问而互不影响。

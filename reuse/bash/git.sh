@@ -78,3 +78,9 @@ git rev-parse --show-toplevel
 
 # 跳转到git仓库的root路径
 cd $(git rev-parse --show-cdup)
+
+# 查看git仓库都有谁commit过
+git log --pretty=format:"%ce %ae" | sort | uniq -c 
+
+# 查看xxx都修改或创建过哪些文件
+git whatchanged --author="${AuthorName}" --name-only --oneline | grep ${FilePath} | sort | uniq -c
