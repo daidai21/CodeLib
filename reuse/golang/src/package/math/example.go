@@ -1,7 +1,12 @@
 package main
 
-// TODO
-
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
+
+	fmt.Println(math.Abs(-1))
+
 }
