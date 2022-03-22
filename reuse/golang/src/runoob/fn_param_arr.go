@@ -14,6 +14,7 @@ func main() {
 	fmt.Printf("平均值为: %f ", avg)
 }
 func getAverage(arr [5]int, size int) float32 {
+	fmt.Println(len(arr))
 	var i, sum int
 	var avg float32
 
