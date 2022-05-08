@@ -38,3 +38,4 @@ reuse/java/bin/*
 !template/golang.project/third_party/
 tempCodeRunnerFile.java # For vscode
 java_scala_mixture.iml
+reuse/golang/example_.go
