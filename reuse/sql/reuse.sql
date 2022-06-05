@@ -12,10 +12,14 @@ SHOW tables;
 
 -- create tb
 CREATE TABLE IF NOT EXISTS `test` (
-   `id` BIGINT AUTO_INCREMENT,
-   `name` VARCHAR(100) NOT NULL,
-   PRIMARY KEY ( `id` )
-);
+    `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+    `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `update_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+    `deleted_time` datetime DEFAULT NULL COMMENT '删除时间',
+    `note` varchar(500) DEFAULT NULL COMMENT '备注',
+
+    PRIMARY KEY ( `id` )
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='测试表';
 
 
 
