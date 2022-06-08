@@ -13,3 +13,6 @@ waitgroup_example:
 
 ticker_example:
 	go run ticker_example.go
+
+print_context:
+	go run print_context.go
