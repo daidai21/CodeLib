@@ -1,0 +1,15 @@
+// 指定protobuf的版本，proto3是最新的语法版本
+syntax = "proto3";
+
+package com.example.demo;
+
+
+message BaseRequest {
+  optional string request_id = 1;
+}
+
+message BaseResponse {
+  optional string request_id = 1;
+  int32 code = 2; // 0是成功，大于0是errorCode
+  optional string message = 3; // errorMessage
+}

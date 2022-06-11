@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package demo;
+
+
+option java_package = "com.example.demo";
+
+option java_outer_classname = "ExampleReqProtos";
+
+import "./base3.proto";
+
+
+
+message ExampleReq {
+  optional double double_type = 1;
+  float float_type = 2;
+  optional int32 int32_type = 3;
+  uint32 uint32_type = 4;
+  uint64 uint64_type = 5;
+  repeated bool bool_type = 6;
+  string string_type = 7;
+  bytes bytes_type = 8;
+  ExampleColorEnum color = 90;
+  repeated string names = 101; // 数组
+  map<string, bool> incs = 112; // map
+
+  oneof oneof_val {
+    string name = 12;
+    int64 value = 13;
+  }
+
+  reserved 2, 15, 9 to 11;
+
+}
+
+enum ExampleColorEnum {
+  option allow_alias = true;
+  RED = 0;
+  GREEN = 1;
+  WHITE = 2;
+  BLUE = 3;
+  LANSE = 3; // BLUE 和 LANSE 都是蓝色的枚举值
+}
