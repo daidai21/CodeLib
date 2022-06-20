@@ -84,3 +84,9 @@ git log --pretty=format:"%ce %ae" | sort | uniq -c
 
 # 查看xxx都修改或创建过哪些文件
 git whatchanged --author="${AuthorName}" --name-only --oneline | grep ${FilePath} | sort | uniq -c
+
+# 进入子模块目录，将子模块回滚到指定commit版本
+git reset --hard ${commit-number}
+
+# 查看commitId属于哪个分支
+git branch -r --contains ${commit-number}
