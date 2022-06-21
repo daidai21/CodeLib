@@ -22,6 +22,11 @@ CREATE TABLE IF NOT EXISTS `test` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='测试表';
 
 
+-- 表加一列,在id列之后
+ALTER TABLE t_person
+ADD COLUMN cnt BIGINT NOT NULL DEFAULT '0' COMMENT '数量' AFTER id
+;
+
 
 
 SHOW status LIKE 'Com_select%';
