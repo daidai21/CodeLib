@@ -22,12 +22,36 @@ CREATE TABLE IF NOT EXISTS `test` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='测试表';
 
 
+-- 删除数据
+UPDATE t_test
+SET column1=value1,
+    column2=value2,...
+    deleted_time = CURRENT_TIMESTAMP()
+WHERE some_column=some_value;
+
+
+-- 查询
+SELECT col1,
+        col2,
+        ...
+FROM t_test
+WHERE deleted_time IS NOT NULL
+        AND col1 = someValue
+        ...
+;
+
+
 -- 表加一列,在id列之后
 ALTER TABLE t_person
 ADD COLUMN cnt BIGINT NOT NULL DEFAULT '0' COMMENT '数量' AFTER id
 ;
 
-
+-- 捞取test数据
+SELECT *
+FROM t_person
+WHERE name LIKE 'test%'
+LIMIT 10
+;
 
 SHOW status LIKE 'Com_select%';
 SHOW status LIKE 'Com_insert%';
