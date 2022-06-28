@@ -53,6 +53,28 @@ WHERE name LIKE 'test%'
 LIMIT 10
 ;
 
+-- json get 通过key获取value
+-- {\"test\":true}
+SELECT json_col->'$.test'
+FROM t_test
+;
+
+
+-- 捞出所有重复数量等于3的id
+SELECT DISTINCT id
+FROM t_test
+GROUP BY id
+HAVING COUNT(id) = 3
+;
+
+
+-- 今天从0点开始插入的数据行数
+SELECT COUNT(*)
+FROM `t_test`
+WHERE gmt_create > DATE_FORMAT(CURDATE(),'%Y-%m-%d %H:%i:%s')
+;
+
+
 SHOW status LIKE 'Com_select%';
 SHOW status LIKE 'Com_insert%';
 SHOW status LIKE 'Com_update%';

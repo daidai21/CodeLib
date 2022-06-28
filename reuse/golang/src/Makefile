@@ -26,3 +26,12 @@ reflect_rule_example:
 
 range_channel_example:
 	go run range_channel_example.go
+
+channel_select_1_example:
+	go run channel_select_1_example.go
+
+channel_select_2_example:
+	go run channel_select_2_example.go
+
+context_deadline_example:
+	go run context_deadline_example.go
