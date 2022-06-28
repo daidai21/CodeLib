@@ -23,3 +23,6 @@ reflect_example:
 
 reflect_rule_example:
 	go run reflect_rule_example.go
+
+range_channel_example:
+	go run range_channel_example.go
