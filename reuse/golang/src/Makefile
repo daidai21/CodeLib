@@ -35,3 +35,6 @@ channel_select_2_example:
 
 context_deadline_example:
 	go run context_deadline_example.go
+
+singleflight_example:
+	go run singleflight_example.go
