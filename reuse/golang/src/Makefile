@@ -38,3 +38,9 @@ context_deadline_example:
 
 singleflight_example:
 	go run singleflight_example.go
+
+stop_goroutine_1_example:
+	go run	stop_goroutine_1_example.go
+
+stop_goroutine_2_example:
+	go run	stop_goroutine_2_example.go
