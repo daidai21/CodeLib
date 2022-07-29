@@ -7,6 +7,7 @@ import (
 )
 
 // context 控制goroutine退出
+// ref  https://zhuanlan.zhihu.com/p/66659719
 
 var wg sync.WaitGroup
 

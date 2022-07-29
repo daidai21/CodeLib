@@ -44,3 +44,9 @@ stop_goroutine_1_example:
 
 stop_goroutine_2_example:
 	go run	stop_goroutine_2_example.go
+
+context_copy_example:
+	go run context_copy_example.go
+
+struct_method_ptr_or_not_example:
+	go run struct_method_ptr_or_not_example.go
