@@ -50,3 +50,6 @@ context_copy_example:
 
 struct_method_ptr_or_not_example:
 	go run struct_method_ptr_or_not_example.go
+
+string_array_example:
+	go run string_array_example.go
