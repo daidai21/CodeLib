@@ -53,3 +53,6 @@ struct_method_ptr_or_not_example:
 
 string_array_example:
 	go run string_array_example.go
+
+ref_ptr_struct_print_example:
+	go run ref_ptr_struct_print_example.go
