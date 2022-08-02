@@ -56,3 +56,9 @@ string_array_example:
 
 ref_ptr_struct_print_example:
 	go run ref_ptr_struct_print_example.go
+
+func_return_val_init_example:
+	go run func_return_val_init_example.go
+
+struct_init_example:
+	go run struct_init_example.go
