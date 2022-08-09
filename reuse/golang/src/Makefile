@@ -62,3 +62,6 @@ func_return_val_init_example:
 
 struct_init_example:
 	go run struct_init_example.go
+
+interface_struct_copy_example:
+	go run interface_struct_copy_example.go
