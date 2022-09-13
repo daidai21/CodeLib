@@ -65,3 +65,19 @@ struct_init_example:
 
 interface_struct_copy_example:
 	go run interface_struct_copy_example.go
+
+slice_goroutine_example:
+	go run slice_goroutine_example.go
+
+recover_global_example:
+	go run recover_global_example.go
+
+	echo "============================================================================================================"
+	echo "============================================================================================================"
+
+	go run recover_global_example2.go
+
+	echo "============================================================================================================"
+	echo "============================================================================================================"
+
+	go run recover_global_example3.go
