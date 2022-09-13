@@ -81,3 +81,6 @@ recover_global_example:
 	echo "============================================================================================================"
 
 	go run recover_global_example3.go
+
+goroutine_timeout_exit_example:
+	go run goroutine_timeout_exit_example.go
