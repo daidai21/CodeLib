@@ -29,6 +29,29 @@ public class BenchmarkSerialization {
         }
         System.out.println(System.currentTimeMillis() - start);
 
+         start = System.currentTimeMillis();
+        for (int i = 0; i < loopNum; i++) {
+            int integerVal = rand.nextInt();
+            long longVal = rand.nextLong();
+            float floatVal = rand.nextFloat();
+            double doubleVal = rand.nextDouble();
+            boolean booleanVal = rand.nextBoolean();
+
+            Object serVal;
+            serVal = integerVal;
+            integerVal = (int) serVal;
+            serVal = longVal;
+            longVal = (long) serVal;
+            serVal = floatVal;
+            floatVal = (float) serVal;
+            serVal = doubleVal;
+            doubleVal = (double) serVal;
+            serVal = booleanVal;
+            booleanVal = (boolean) serVal;
+        }
+        System.out.println(System.currentTimeMillis() - start);
+
+
         // 序列化String的
         start = System.currentTimeMillis();
         for (int i = 0; i < loopNum; i++) {
@@ -46,7 +69,7 @@ public class BenchmarkSerialization {
             serVal = floatVal.toString();
             floatVal = Float.parseFloat(serVal);
             serVal = doubleVal.toString();
-            doubleVal =Double.parseDouble( serVal);
+            doubleVal = Double.parseDouble(serVal);
             serVal = booleanVal.toString();
             booleanVal = Boolean.getBoolean(serVal);
         }
@@ -56,7 +79,7 @@ public class BenchmarkSerialization {
 }
 /**
  * Output:
- *
+ * <p>
  * 105
  * 1165
  */
