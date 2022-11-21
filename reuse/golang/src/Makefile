@@ -84,3 +84,6 @@ recover_global_example:
 
 goroutine_timeout_exit_example:
 	go run goroutine_timeout_exit_example.go
+
+return_defer_order:
+	go run return_defer_order.go
