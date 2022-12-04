@@ -13,3 +13,6 @@ rwmutex_example:
 	go run rwmutex_example.go
 waitgroup_example:
 	go run waitgroup_example.go
+
+pool_benchmark:
+	go test pool_benchmark_example_test.go -bench . -benchmem
