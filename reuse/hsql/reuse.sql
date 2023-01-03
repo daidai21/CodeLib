@@ -28,3 +28,15 @@ from (
 )
 where  rn <= 10
 ;
+
+
+-- Create Table as select (CTAS)
+-- 只能是直接copy源表的ddl
+-- 只能是下面简单的这种
+-- https://stackoverflow.com/questions/22249739/create-hive-table-using-as-select-or-like-and-also-specify-delimiter
+CREATE TABLE xxx.person 
+AS 
+select * 
+from employee
+;
+
