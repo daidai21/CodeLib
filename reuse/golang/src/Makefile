@@ -87,3 +87,6 @@ goroutine_timeout_exit_example:
 
 return_defer_order:
 	go run return_defer_order.go
+
+function_interface_example:
+	go run function_interface_example.go
