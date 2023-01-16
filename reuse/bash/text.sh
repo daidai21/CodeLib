@@ -17,3 +17,8 @@ sed -e '/abc/d'  a.txt
 
 # 查看 72200 ~ 72250 行
 sed -n '72200, 72250p' ecom.activity.biz_mesh_service.run.log.2022-06-21
+
+
+# bash统计 字数 中文英文分开
+echo "中文字数："
+find . | grep \.md | xargs wc -m | tail -n 1

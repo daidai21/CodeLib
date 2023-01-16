@@ -1,3 +1,5 @@
+-- hive sql
+
 
 -- 多行合并
 select "tom" as name
