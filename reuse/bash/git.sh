@@ -90,3 +90,7 @@ git reset --hard ${commit-number}
 
 # 查看commitId属于哪个分支
 git branch -r --contains ${commit-number}
+
+# 查找文件， 之前commit过，但是后来删了
+# https://stackoverflow.com/questions/7203515/how-to-find-a-deleted-file-in-the-project-commit-history
+git log --all --full-history -- "**/thefile.*"
