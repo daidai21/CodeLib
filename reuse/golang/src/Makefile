@@ -90,3 +90,6 @@ return_defer_order:
 
 function_interface_example:
 	go run function_interface_example.go
+
+slice_nil_empty_example:
+	go run slice_nil_empty_example.go

@@ -42,3 +42,8 @@ select *
 from employee
 ;
 
+
+
+-- convert array to string
+select cast(array_bigint as string)
+;
