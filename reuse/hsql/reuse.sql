@@ -9,7 +9,7 @@ select "jerry" as name
 
 -- 建表
 
-CREATE TABLE IF NOT EXISTS example_df(
+CREATE TABLE IF NOT EXISTS db_name.example_df(
     id INT COMMENT 'ID'
     ,name STRING COMMENT '姓名'
     ,age INT COMMENT '年龄'
@@ -47,3 +47,21 @@ from employee
 -- convert array to string
 select cast(array_bigint as string)
 ;
+
+
+-- 更新多行，且每行的值不一样
+INSERT INTO mhytable(storeId, date, ttl, bytes) 
+VALUES 
+('477866', '2019-02-05', 54543543, 100),
+('6301', '2019-02-05', 54543543, 999999),
+('12345', '2019-02-05', 54543543, 999999)
+ON DUPLICATE KEY UPDATE
+bytes = VALUES(bytes)
+;
+
+
+
+-- hive sql 子字符串出现的次数
+
+size(split(get_json_object([sign_info], '$.item_sign_info.sku_sign_info'), '"sku_id"')) - 1
+
